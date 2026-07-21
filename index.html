@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5CX38NHMGW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5CX38NHMGW');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Keon-seop KIM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --white: #f5f5f0;
+    --accent: #F5C842;
+    --accent2: #E8473F;
+    --gray-dark: #1a1a1a;
+    --gray-mid: #2d2d2d;
+    --gray-light: #888;
+    --gray-lighter: #bbb;
+    --border: rgba(255,255,255,0.08);
+    --card-bg: #141414;
+    --font-body: 'Noto Sans KR', 'Noto Sans', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--black); color: var(--white); line-height: 1.6; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; opacity: 0.4; }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+  .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 8vw; overflow: hidden; }
+  .hero-bg-lines { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .hero-bg-lines span { position: absolute; display: block; background: linear-gradient(180deg, transparent, rgba(245,200,66,0.12), transparent); width: 1px; top: 0; bottom: 0; animation: lineFade 4s ease-in-out infinite; }
+  .hero-bg-lines span:nth-child(1) { left: 20%; animation-delay: 0s; }
+  .hero-bg-lines span:nth-child(2) { left: 40%; animation-delay: 0.8s; }
+  .hero-bg-lines span:nth-child(3) { left: 60%; animation-delay: 1.6s; }
+  .hero-bg-lines span:nth-child(4) { left: 80%; animation-delay: 2.4s; }
+  @keyframes lineFade { 0%,100% { opacity: 0; transform: scaleY(0.2); } 50% { opacity: 1; transform: scaleY(1); } }
+  .hero-glow { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(245,200,66,0.08) 0%, transparent 70%); top: -150px; right: -150px; pointer-events: none; animation: glowPulse 6s ease-in-out infinite; }
+  @keyframes glowPulse { 0%,100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.2); opacity: 1; } }
+  .hero-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+  .hero-name { font-size: clamp(3.5rem, 9vw, 8rem); font-weight: 900; line-height: 0.95; letter-spacing: -0.03em; margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.9s ease forwards 0.4s; }
+  .hero-name em { font-style: normal; color: var(--accent); }
+  .hero-sub { font-size: clamp(1rem, 2vw, 1.3rem); font-weight: 300; color: var(--gray-lighter); max-width: 540px; margin-bottom: 3rem; opacity: 0; animation: fadeUp 1s ease forwards 0.6s; }
+  .hero-tags { display: flex; gap: 0.75rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 1s ease forwards 0.8s; }
+  .hero-tag { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; padding: 0.4rem 1rem; border: 1px solid rgba(245,200,66,0.4); border-radius: 100px; color: var(--accent); background: rgba(245,200,66,0.06); }
+  .hero-scroll { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; opacity: 0; animation: fadeIn 1s ease forwards 1.5s; }
+  .hero-scroll span { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-light); }
+  .hero-scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--accent), transparent); animation: scrollLine 1.5s ease-in-out infinite; }
+  @keyframes scrollLine { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 8vw; background: rgba(10,10,10,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .nav-logo { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); text-decoration: none; }
+  .nav-logo em { color: var(--accent); font-style: normal; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links button { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-light); background: none; border: none; cursor: pointer; font-family: var(--font-body); padding: 0; transition: color 0.2s; }
+  .nav-links button:hover { color: var(--accent); }
+
+  section { padding: 7rem 8vw; }
+  .section-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .section-title { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1.5rem; }
+  .section-desc { font-size: 1rem; color: var(--gray-lighter); max-width: 560px; margin-bottom: 4rem; font-weight: 300; }
+  .divider { width: 100%; height: 1px; background: linear-gradient(to right, var(--accent), transparent); opacity: 0.3; margin-bottom: 5rem; }
+
+  .tabs { display: flex; gap: 0.5rem; margin-bottom: 3.5rem; flex-wrap: wrap; }
+  .tab-btn { font-family: var(--font-body); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.55rem 1.4rem; border: 1px solid var(--border); border-radius: 100px; background: transparent; color: var(--gray-light); cursor: pointer; transition: all 0.25s; }
+  .tab-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .tab-btn.active { background: var(--accent); border-color: var(--accent); color: var(--black); }
+
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+  .project-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; cursor: pointer; transition: transform 0.3s ease, border-color 0.3s, box-shadow 0.3s; position: relative; display: flex; flex-direction: column; animation: cardIn 0.5s ease both; }
+  @keyframes cardIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .project-card:hover { transform: translateY(-6px); border-color: rgba(245,200,66,0.4); box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 30px rgba(245,200,66,0.06); }
+  .card-thumb { width: 100%; aspect-ratio: 16/9; background: var(--gray-mid); position: relative; overflow: hidden; }
+  .card-thumb-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s; z-index: 1; }
+  .card-thumb-img.loaded { opacity: 1; }
+  .card-thumb-inner { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+  .card-thumb-icon { font-size: 3rem; opacity: 0.25; transition: opacity 0.3s, transform 0.3s; }
+  .project-card:hover .card-thumb-icon { opacity: 0.4; transform: scale(1.1); }
+  .card-thumb-gradient { position: absolute; inset: 0; opacity: 0; transition: opacity 0.3s; }
+  .project-card:hover .card-thumb-gradient { opacity: 1; }
+  .card-category { position: absolute; top: 1rem; left: 1rem; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 100px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); border: 1px solid var(--border); z-index: 2; }
+  .cat-ai { color: #7DD3FC; border-color: rgba(125,211,252,0.3); }
+  .cat-new { color: #86EFAC; border-color: rgba(134,239,172,0.3); }
+  .cat-ops { color: #FCA5A5; border-color: rgba(252,165,165,0.3); }
+  .cat-sales { color: var(--accent); border-color: rgba(245,200,66,0.3); }
+  .cat-tool { color: #C4B5FD; border-color: rgba(196,181,253,0.3); }
+  .card-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+  .card-org { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 0.4rem; }
+  .card-title { font-size: 1.05rem; font-weight: 700; line-height: 1.35; margin-bottom: 0.75rem; color: var(--white); }
+  .card-desc { font-size: 0.82rem; color: var(--gray-lighter); font-weight: 300; line-height: 1.6; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .card-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .card-period { font-size: 0.72rem; color: var(--gray-light); font-weight: 400; }
+  .card-arrow { width: 32px; height: 32px; border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gray-light); font-size: 0.9rem; transition: all 0.25s; }
+  .project-card:hover .card-arrow { background: var(--accent); border-color: var(--accent); color: var(--black); }
+
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.88); backdrop-filter: blur(8px); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 2rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+  .modal { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; width: 100%; max-width: 780px; max-height: 88vh; overflow-y: auto; transform: translateY(30px) scale(0.97); transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1); position: relative; }
+  .modal-overlay.open .modal { transform: translateY(0) scale(1); }
+  .modal::-webkit-scrollbar { width: 3px; }
+  .modal::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+  .modal-header { padding: 1.5rem 2rem 1.25rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--card-bg); backdrop-filter: blur(12px); z-index: 10; display: flex; align-items: flex-start; justify-content: space-between; gap: 1.25rem; }
+  .modal-header-left { flex: 1; min-width: 0; }
+  .modal-header-right { display: flex; align-items: center; flex-shrink: 0; }
+  .modal-category-badge { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 100px; background: rgba(245,200,66,0.15); color: var(--accent); display: inline-block; margin-bottom: 0.6rem; }
+  .modal-title { font-size: 1.3rem; font-weight: 800; line-height: 1.3; letter-spacing: -0.01em; }
+  .modal-close { background: none; border: 1px solid var(--border); color: var(--gray-light); cursor: pointer; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; transition: all 0.2s; }
+  .modal-close:hover { background: var(--accent2); border-color: var(--accent2); color: white; }
+  .modal-body { padding: 2rem; }
+
+  .gallery-wrap { position: relative; margin: 0 0 0.75rem; }
+  .modal-img-gallery {
+    padding: 0 0 0.5rem;
+    overflow-x: auto;
+    display: flex;
+    gap: 0.6rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    cursor: grab;
+    user-select: none;
+  }
+  .modal-img-gallery::-webkit-scrollbar { display: none; }
+  .modal-img-gallery.grabbing { cursor: grabbing; }
+
+  .gallery-slide {
+    flex-shrink: 0;
+    width: calc(25% - 0.45rem);
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    background: var(--gray-mid);
+    border: 1px solid var(--border);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  /* 이미지가 1~3장일 때는 더 크게 표시 */
+  .gallery-slide.wide-slide {
+    width: calc(50% - 0.3rem);
+  }
+  .gallery-slide:hover { transform: scale(1.03); border-color: rgba(245,200,66,0.5); }
+  .gallery-slide img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0; transition: opacity 0.3s; }
+  .gallery-slide img.loaded { opacity: 1; }
+  .gallery-slide-ph { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.4rem; }
+  .gallery-slide-ph .ph-emoji { font-size: 1.4rem; opacity: 0.25; }
+  .gallery-slide-ph span { font-size: 0.6rem; color: var(--gray-light); text-align: center; padding: 0 0.5rem; }
+  .gallery-slide-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 0.35rem 0.5rem; background: linear-gradient(transparent, rgba(0,0,0,0.72)); font-size: 0.62rem; color: rgba(255,255,255,0.85); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  .gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: rgba(10,10,10,0.75);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--white);
+    font-size: 0.9rem;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 5;
+    pointer-events: all;
+  }
+  .gallery-arrow:hover { background: var(--accent); border-color: var(--accent); color: var(--black); }
+  .gallery-arrow.hidden { opacity: 0; pointer-events: none; }
+  .gallery-arrow-left { left: 0; }
+  .gallery-arrow-right { right: 0; }
+
+  .gallery-dots { display: flex; justify-content: center; gap: 0.3rem; margin-bottom: 1.75rem; }
+  .gallery-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.2); transition: all 0.2s; cursor: pointer; }
+  .gallery-dot.active { width: 14px; border-radius: 2px; background: var(--accent); }
+
+  .modal-img-gallery-wrap { margin-bottom: 0; }
+
+  .viewer-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.96);
+    z-index: 4000;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.25s;
+  }
+  .viewer-overlay.open { opacity: 1; pointer-events: all; }
+  .viewer-box {
+    position: relative;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+  }
+  .viewer-topbar {
+    position: absolute; top: 0; left: 0; right: 0;
+    padding: 1rem 1.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+    z-index: 10;
+  }
+  .viewer-counter { font-size: 0.8rem; color: rgba(255,255,255,0.6); font-weight: 500; letter-spacing: 0.05em; }
+  .viewer-caption-top { font-size: 0.82rem; color: rgba(255,255,255,0.85); font-weight: 400; text-align: center; flex: 1; padding: 0 1rem; }
+  .viewer-close {
+    background: none; border: 1px solid rgba(255,255,255,0.2);
+    color: white; cursor: pointer;
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; transition: all 0.2s; flex-shrink: 0;
+  }
+  .viewer-close:hover { background: var(--accent2); border-color: var(--accent2); }
+  .viewer-img-wrap { max-width: 90vw; max-height: 78vh; display: flex; align-items: center; justify-content: center; }
+  .viewer-img { max-width: 100%; max-height: 78vh; object-fit: contain; border-radius: 8px; display: block; transition: opacity 0.2s; }
+  .viewer-nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 48px; height: 48px; border-radius: 50%;
+    background: rgba(20,20,20,0.8); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: white; font-size: 1.4rem;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: all 0.2s; z-index: 10;
+  }
+  .viewer-nav:hover { background: var(--accent); border-color: var(--accent); color: var(--black); }
+  .viewer-nav.disabled { opacity: 0.18; pointer-events: none; }
+  .viewer-nav-prev { left: 1.5rem; }
+  .viewer-nav-next { right: 1.5rem; }
+  .viewer-strip-wrap {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 0.75rem 1.5rem 1rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    display: flex; justify-content: center;
+  }
+  .viewer-strip { display: flex; gap: 0.4rem; overflow-x: auto; max-width: 100%; scrollbar-width: none; }
+  .viewer-strip::-webkit-scrollbar { display: none; }
+  .viewer-thumb { flex-shrink: 0; width: 52px; height: 36px; border-radius: 5px; overflow: hidden; border: 2px solid transparent; background: var(--gray-mid); cursor: pointer; transition: border-color 0.2s; }
+  .viewer-thumb.active { border-color: var(--accent); }
+  .viewer-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .modal-section { margin-bottom: 2.5rem; }
+  .modal-section-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+  .modal-section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .info-item { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1.1rem; }
+  .info-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 0.35rem; }
+  .info-value { font-size: 0.88rem; font-weight: 500; color: var(--white); }
+  .modal-text { font-size: 0.9rem; color: var(--gray-lighter); line-height: 1.8; font-weight: 300; }
+  .modal-text strong { color: var(--white); font-weight: 600; }
+  .highlight-box { background: rgba(245,200,66,0.06); border: 1px solid rgba(245,200,66,0.2); border-left: 3px solid var(--accent); border-radius: 8px; padding: 1rem 1.25rem; font-size: 0.88rem; color: var(--gray-lighter); line-height: 1.7; margin-top: 0.75rem; }
+  .highlight-box strong { color: var(--accent); font-weight: 600; }
+  .tools-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tool-chip { font-size: 0.75rem; font-weight: 600; padding: 0.35rem 0.85rem; border-radius: 6px; background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--gray-lighter); }
+  .achievement { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.8rem; font-weight: 500; color: #86EFAC; background: rgba(134,239,172,0.1); border: 1px solid rgba(134,239,172,0.25); border-radius: 6px; padding: 0.3rem 0.75rem; margin: 0.25rem 0.25rem 0 0; }
+
+  .sub-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 2rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+  .sub-modal-overlay.open { opacity: 1; pointer-events: all; }
+  .sub-modal { background: #111; border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; width: 100%; max-width: 680px; max-height: 82vh; overflow-y: auto; transform: translateY(20px); transition: transform 0.3s ease; }
+  .sub-modal-overlay.open .sub-modal { transform: translateY(0); }
+  .sub-modal::-webkit-scrollbar { width: 3px; }
+  .sub-modal::-webkit-scrollbar-thumb { background: var(--accent); }
+  .sub-modal-header { padding: 1.5rem 1.75rem 1.25rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: #111; z-index: 10; }
+  .sub-modal-title { font-size: 1rem; font-weight: 700; color: var(--white); }
+  .sub-modal-body { padding: 1.75rem; }
+  .spec-block { margin-bottom: 1.75rem; }
+  .spec-block-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+  .spec-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .spec-list li { font-size: 0.85rem; color: var(--gray-lighter); line-height: 1.6; padding-left: 1.1rem; position: relative; }
+  .spec-list li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; top: 0.15em; }
+
+  footer { padding: 3rem 8vw; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  footer p { font-size: 0.78rem; color: var(--gray-light); }
+  footer strong { color: var(--accent); }
+
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .about-text p { font-size: 1rem; color: var(--gray-lighter); font-weight: 300; line-height: 1.9; margin-bottom: 1rem; }
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .skill-item { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; }
+  .skill-name { font-size: 0.78rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--white); }
+  .skill-name-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; }
+  .skill-score { font-size: 0.72rem; font-weight: 700; color: #F5C842; letter-spacing: 0.02em; }
+  .skill-bar { height: 3px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
+  .skill-fill { height: 100%; background: var(--accent); border-radius: 2px; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 5vw; }
+    .nav-links { display: none; }
+    section { padding: 5rem 5vw; }
+    .hero { padding: 0 5vw; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .info-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .modal { max-height: 95vh; }
+    .modal-header, .modal-body { padding: 1.25rem; }
+    .gallery-slide { width: calc(50% - 0.3rem); }
+    .gallery-slide.wide-slide { width: calc(80% - 0.3rem); }
+  }
+
+  .aboutme-btn {
+    display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.75rem;
+    font-family: var(--font-body); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em;
+    padding: 0.7rem 1.4rem; background: var(--accent); color: var(--black);
+    border: none; border-radius: 100px; cursor: pointer; transition: all 0.25s;
+  }
+  .aboutme-btn:hover { background: #ffd84d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,200,66,0.3); }
+
+  .aboutme-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.88); backdrop-filter: blur(10px);
+    z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 2rem;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+  .aboutme-overlay.open { opacity: 1; pointer-events: all; }
+  .aboutme-modal {
+    background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px;
+    width: 100%; max-width: 860px; max-height: 88vh; display: flex; flex-direction: column;
+    transform: translateY(28px) scale(0.97); transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1); overflow: hidden;
+  }
+  .aboutme-overlay.open .aboutme-modal { transform: translateY(0) scale(1); }
+  .aboutme-header { padding: 1.5rem 2rem 1.25rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .aboutme-header-left { display: flex; flex-direction: column; gap: 0.2rem; }
+  .aboutme-eyebrow { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); }
+  .aboutme-header-title { font-size: 1.2rem; font-weight: 800; letter-spacing: -0.01em; color: var(--white); }
+  .aboutme-header-title em { font-style: normal; color: var(--accent); }
+  .aboutme-body { display: grid; grid-template-columns: 260px 1fr; flex: 1; min-height: 0; overflow: hidden; }
+  .aboutme-questions { border-right: 1px solid var(--border); overflow-y: auto; padding: 1.25rem 0; scrollbar-width: thin; scrollbar-color: var(--accent) transparent; }
+  .aboutme-questions::-webkit-scrollbar { width: 3px; }
+  .aboutme-questions::-webkit-scrollbar-thumb { background: var(--accent); }
+  .aboutme-q-item { padding: 0.85rem 1.5rem; font-size: 0.8rem; font-weight: 500; color: var(--gray-light); cursor: pointer; transition: all 0.2s; border-left: 3px solid transparent; line-height: 1.5; position: relative; }
+  .aboutme-q-item:hover { color: var(--white); background: rgba(255,255,255,0.03); }
+  .aboutme-q-item.active { color: var(--accent); background: rgba(245,200,66,0.06); border-left-color: var(--accent); font-weight: 600; }
+  .aboutme-q-num { display: block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; color: var(--gray-light); margin-bottom: 0.25rem; opacity: 0.6; }
+  .aboutme-q-item.active .aboutme-q-num { color: var(--accent); opacity: 1; }
+  .aboutme-answer { overflow-y: auto; padding: 2rem 2rem 2rem 2.25rem; scrollbar-width: thin; scrollbar-color: var(--accent) transparent; }
+  .aboutme-answer::-webkit-scrollbar { width: 3px; }
+  .aboutme-answer::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+  .aboutme-ans-text { font-size: 0.92rem; color: var(--gray-lighter); line-height: 2; font-weight: 300; white-space: pre-wrap; }
+  .aboutme-ans-text b { color: var(--accent); font-weight: 700; }
+  @keyframes ansFadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .aboutme-ans-text { animation: ansFadeIn 0.3s ease both; }
+  @media (max-width: 640px) {
+    .aboutme-body { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+    .aboutme-questions { border-right: none; border-bottom: 1px solid var(--border); overflow-x: auto; overflow-y: hidden; display: flex; padding: 0.5rem; gap: 0.25rem; white-space: nowrap; }
+    .aboutme-q-item { border-left: none; border-bottom: 3px solid transparent; padding: 0.5rem 0.85rem; flex-shrink: 0; font-size: 0.72rem; }
+    .aboutme-q-item.active { border-bottom-color: var(--accent); border-left-color: transparent; }
+    .aboutme-q-num { display: none; }
+    .aboutme-answer { padding: 1.25rem; }
+  }
+  .aboutme-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); animation: ansFadeIn 0.4s ease 0.15s both; }
+  .summary-card { background: rgba(245,200,66,0.05); border: 1px solid rgba(245,200,66,0.28); border-radius: 12px; padding: 0.9rem 1rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  .summary-card-icon { font-size: 1.1rem; line-height: 1; }
+  .summary-card-text { font-size: 0.75rem; font-weight: 500; color: var(--accent); line-height: 1.55; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">KKS <em>Portfolio</em></a>
+  <div class="nav-links">
+    <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">소개</button>
+    <button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">프로젝트</button>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-bg-lines"><span></span><span></span><span></span><span></span></div>
+  <div class="hero-glow"></div>
+  <div class="hero-eyebrow">Service Planner · AI Prototyper</div>
+  <h1 class="hero-name">Keon-seop<br><em>KIM</em></h1>
+  <p class="hero-sub">서비스기획 · 웹기획 · 앱기획<br>AI 기반 프로토타입 제작부터 신규 플랫폼 구축까지</p>
+  <div class="hero-tags">
+    <span class="hero-tag">AI Vibe Coding</span>
+    <span class="hero-tag">서비스 기획</span>
+    <span class="hero-tag">UX 설계</span>
+    <span class="hero-tag">프로토타입 제작</span>
+    <span class="hero-tag">PM</span>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="hero-scroll-line"></div></div>
+</section>
+
+<section id="about">
+  <div class="section-label">About</div>
+  <div class="section-title">기획하고,<br>실제로 만듭니다.</div>
+  <div class="divider"></div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>아이디어에서 멈추지 않고, 실제로 동작하는 결과물을 만들어내는 기획자입니다. AI Vibe Coding을 통해 LLM 기반 프로토타입을 직접 구현하며, 기획 역량과 기술 친화적 실행력을 동시에 보여줍니다.</p>
+      <p>교육 테크 분야에서 서비스 기획, UX 설계, PM 역할을 두루 경험했으며, 사용자의 목소리를 직접 듣고 그에 맞는 전략을 수립하는 데 강점이 있습니다.</p>
+      <p>문제를 정의하고 끝내지 않습니다. 어떻게 구현하고, 실제로 작동하게 만들지까지 설계합니다. 그리고 그 과정을 통해 서비스의 결과를 바꿉니다.</p>
+      <button class="aboutme-btn" onclick="openAboutMe()">더 알아보기 · About Me &nbsp;→</button>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-item"><div class="skill-name-row"><span class="skill-name">서비스 기획</span><span class="skill-score">95</span></div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+      <div class="skill-item"><div class="skill-name-row"><span class="skill-name">UX/UI 설계</span><span class="skill-score">93</span></div><div class="skill-bar"><div class="skill-fill" style="width:93%"></div></div></div>
+      <div class="skill-item"><div class="skill-name-row"><span class="skill-name">AI 프로토타이핑</span><span class="skill-score">90</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+      <div class="skill-item"><div class="skill-name-row"><span class="skill-name">PM / QA</span><span class="skill-score">90</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+      <div class="skill-item"><div class="skill-name-row"><span class="skill-name">요구사항 정의</span><span class="skill-score">93</span></div><div class="skill-bar"><div class="skill-fill" style="width:93%"></div></div></div>
+      <div class="skill-item"><div class="skill-name-row"><span class="skill-name">사업 전략</span><span class="skill-score">85</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-label">Projects</div>
+  <div class="section-title">모든 기획의 기록</div>
+  <p class="section-desc">AI 프로토타입 제작부터 신규 플랫폼 구축, 운영 개선, 매출 전략까지<br>— 실제 결과를 만들어낸 프로젝트들입니다.</p>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="filterCards('all', this)">전체</button>
+    <button class="tab-btn" onclick="filterCards('ai', this)">AI 프로토타입</button>
+    <button class="tab-btn" onclick="filterCards('tool', this)">자동화도구 제작</button>
+    <button class="tab-btn" onclick="filterCards('new', this)">신규 구축</button>
+    <button class="tab-btn" onclick="filterCards('ops', this)">운영 개선</button>
+    <button class="tab-btn" onclick="filterCards('sales', this)">매출 전략</button>
+  </div>
+  <div class="projects-grid" id="projectsGrid"></div>
+</section>
+
+<footer>
+  <p>© 2025 <strong>Keon-seop KIM</strong> — Service Planner Portfolio</p>
+  <p>기획 · 설계 · 실행</p>
+</footer>
+
+<!-- ABOUT ME MODAL -->
+<div class="aboutme-overlay" id="aboutMeModal" onclick="closeAboutMe(event)">
+  <div class="aboutme-modal">
+    <div class="aboutme-header">
+      <div class="aboutme-header-left">
+        <span class="aboutme-eyebrow">About Me</span>
+        <div class="aboutme-header-title">Keon-seop <em>KIM</em></div>
+      </div>
+      <button class="modal-close" onclick="closeAboutMeBtn()">✕</button>
+    </div>
+    <div class="aboutme-body">
+      <div class="aboutme-questions" id="aboutmeQuestions"></div>
+      <div class="aboutme-answer" id="aboutmeAnswer"></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="mainModal" onclick="closeModal(event)">
+  <div class="modal" id="modalContent">
+    <div class="modal-header">
+      <div class="modal-header-left">
+        <div class="modal-category-badge" id="modalBadge"></div>
+        <div class="modal-title" id="modalTitle"></div>
+      </div>
+      <div class="modal-header-right">
+        <button class="modal-close" onclick="closeMainModal()">✕</button>
+      </div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<div class="sub-modal-overlay" id="subModal" onclick="closeSubModal(event)">
+  <div class="sub-modal" id="subModalContent">
+    <div class="sub-modal-header">
+      <div class="sub-modal-title" id="subModalTitle">기획서 상세</div>
+      <button class="modal-close" onclick="closeSubModal()">✕</button>
+    </div>
+    <div class="sub-modal-body" id="subModalBody"></div>
+  </div>
+</div>
+
+<div class="viewer-overlay" id="imgViewer" onclick="onViewerOverlayClick(event)">
+  <div class="viewer-box">
+    <div class="viewer-topbar">
+      <span class="viewer-counter" id="viewerCounter"></span>
+      <span class="viewer-caption-top" id="viewerCaption"></span>
+      <button class="viewer-close" onclick="closeViewer()">✕</button>
+    </div>
+    <div class="viewer-img-wrap">
+      <img class="viewer-img" id="viewerImg" src="" alt="">
+    </div>
+    <button class="viewer-nav viewer-nav-prev" id="viewerPrev" onclick="viewerNav(-1)">&#8249;</button>
+    <button class="viewer-nav viewer-nav-next" id="viewerNext" onclick="viewerNav(1)">&#8250;</button>
+    <div class="viewer-strip-wrap">
+      <div class="viewer-strip" id="viewerStrip"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ================================================================
+// 이미지 경로 설정
+// - 썸네일: images/thumb/파일명
+// - 모달 이미지: images/modal/프로젝트폴더/파일명
+//
+// 모달 이미지 추가 방법:
+// images 배열에 { src: '경로', caption: '설명' } 형태로 추가하세요.
+// 장수 제한 없음 — 있는 만큼 자동으로 표시됩니다.
+// ================================================================
+
+const projects = [
+  {
+    id: 'prd-auto-tool', category: 'tool', org: '개인 프로젝트',
+    title: 'PRD 자동 생성 도구 제작',
+    short: '기획자가 핵심 정보만 입력하면 표준화된 PRD 초안이 자동 생성되는 AI 자동화 도구. 프롬프트 템플릿 설계부터 직접 제작.',
+    period: '2026.06 ~ 2026.06 (1주)', role: '기획, 요구사항 정의, Tool 제작', type: '개인 작업',
+    bg: '기획 업무에서 PRD 작성은 매번 유사한 구조의 요구사항 문서를 처음부터 작성하느라 건당 1~2일이 소요되고, 작성자마다 문서 형식과 완성도가 달라 개발팀과의 검토 과정에서 반복적인 보완 요청이 발생.',
+    point: 'Claude를 활용해 팀에서 반복적으로 쓰는 PRD 구조와 필수 항목을 프롬프트 템플릿으로 설계, 기획자가 핵심 정보만 입력하면 표준화된 요구사항 문서 초안이 자동 생성되도록 도구 직접 제작. 실사용 피드백을 반영해 <strong>프롬프트와 출력 형식</strong>을 반복 개선.',
+    result: '문서 작성 시간을 기존 1~2일에서 약 2시간 수준으로 단축, 팀 내 다른 기획자들도 함께 사용하며 문서 표준화 효과까지 확보. AI 생성 초안은 프로젝트 맥락에 따라 세부 조정이 필요하므로, 자동 생성은 초안 작성 단계까지만 활용하고 최종 검토는 기획자가 직접 수행하는 방식으로 운영.',
+    tools: ['Claude Code', 'ChatGPT', 'Google AI Studio'],
+    thumb: 'images/thumb/PRD자동화도구_대표이미지.png',
+    images: [
+      { src: 'images/modal/prd-auto-tool_1.png', caption: '기본정보입력' },
+      { src: 'images/modal/prd-auto-tool_2.png', caption: '기능상세입력' },
+      { src: 'images/modal/prd-auto-tool_3.png', caption: '제약,목표입력' },
+      { src: 'images/modal/prd-auto-tool_4.png', caption: '초안생성1' },
+      { src: 'images/modal/prd-auto-tool_5.png', caption: '초안생성2' },
+      { src: 'images/modal/prd-auto-tool_6.png', caption: '초안생성3' },
+    ],
+    icon: '⚙️', iconBg: 'linear-gradient(135deg, rgba(196,181,253,0.15), rgba(165,180,252,0.08))',
+    spec: { title: 'PRD 자동 생성 도구 기획 상세', sections: [{ title: '문제 정의', items: ['PRD 작성 건당 1~2일 소요, 반복적인 구조를 매번 처음부터 작성', '작성자별 문서 형식·완성도 편차로 개발팀 검토 시 보완 요청 반복'] }, { title: '기획 및 제작 방식', items: ['팀에서 반복적으로 쓰는 PRD 구조와 필수 항목을 프롬프트 템플릿으로 설계', '핵심 정보만 입력하면 표준화된 요구사항 문서 초안이 자동 생성되는 구조', '실사용 피드백을 반영해 프롬프트·출력 형식을 반복 개선'] }, { title: '운영 방식 및 성과', items: ['문서 작성 시간 1~2일 → 약 2시간으로 단축', '팀 내 다른 기획자들도 함께 사용, 문서 표준화 효과 확보', 'AI 생성은 초안 단계까지만 활용, 최종 검토는 기획자가 직접 수행'] }] }
+  },
+  {
+    id: 'poly-scoop', category: 'ai', org: 'Poly',
+    title: 'Poly Scoop — 학생 영어 기사 Webzine',
+    short: '학생이 직접 작성한 영어 기사를 콘텐츠로 전환하는 참여형 Webzine 서비스. Writing 중심 브랜드 인식 확장을 위한 기획.',
+    period: '2026.03 (1개월)', role: '기획, 요구사항 정의, UX 설계, 프로토타입 제작', type: '인하우스',
+    bg: '특정 역량 영역에서의 경쟁력이 상대적으로 외부에 드러나지 않는 문제, 이용자가 직접 만든 콘텐츠를 서비스 자산으로 전환해 인지도를 넓힐 수 있는 구조의 필요성이 대두.',
+    point: 'Claude AI, Figma Make, ChatGPT를 활용해 프론트엔드(Webzine 화면)와 Admin(콘텐츠 운영 도구) 모두 AI로 프로토타입 제작. 비회원 참여형 열람 구조, 카테고리별 피드, Admin 콘텐츠 등록·검수·발행 플로우까지 화면 단위로 직접 구현해 검증한 뒤, 프로토타입 기준으로 개발팀과 실제 서비스 연동 진행.',
+    result: '프론트와 Admin을 모두 프로토타입으로 미리 검증해 개발 전 화면 오류사항을 감소하고, 이용자 참여형 콘텐츠 서비스 기반 마련. 단, AI 프로토타입은 실제 인증·트래픽·예외 처리 요건까지는 반영이 어려웠으나, 개발 연동 단계에서 개발자와 상세한 커뮤니케이션이 가능하여 현재 문제점을 전달하고 보완까지 완료.',
+    tools: ['Claude AI', 'Figma Make', 'ChatGPT'],
+    thumb: 'images/thumb/Poly-Scoop_대표이미지.png',
+    images: [
+      { src: 'images/modal/poly-scoop_1.png', caption: '전체페이지' },
+      { src: 'images/modal/poly-scoop_2.png', caption: '메인페이지1' },
+      { src: 'images/modal/poly-scoop_3.png', caption: '메인페이지2' },
+      { src: 'images/modal/poly-scoop_4.png', caption: 'Admin 대시보드' },
+      { src: 'images/modal/poly-scoop_5.png', caption: '기사리스트 페이지' },
+      { src: 'images/modal/poly-scoop_6.png', caption: '기사 등록 페이지' },
+      { src: 'images/modal/poly-scoop_7.png', caption: '조회수 확인 페이지' },
+    ],
+    icon: '📰', iconBg: 'linear-gradient(135deg, rgba(245,200,66,0.15), rgba(125,211,252,0.08))',
+    spec: { title: 'Poly Scoop 기획 상세', sections: [{ title: '서비스 개요', items: ['학생이 직접 작성한 영어 기사를 Webzine 형태로 발행', '비회원 기반 참여형 구조 → 진입 장벽 최소화', 'Writing 학습 결과물을 외부 콘텐츠로 전환하여 브랜드 자산화'] }, { title: '주요 기획 포인트', items: ['Webzine 콘텐츠 구조 설계: 카테고리별 기사 분류 및 피드 구성', '비회원 참여형: 별도 로그인 없이 기사 열람 및 공유 가능', 'Admin 콘텐츠 운영 구조: 기사 등록·심사·발행·관리 플로우 설계', '학생 기사 노출 기준 및 큐레이션 로직 정의'] }, { title: '브랜드 전략 방향', items: ['Reading 중심 이미지 탈피 → Writing 경쟁력 외부 가시화', '학습 결과물의 콘텐츠화 → 학부모/외부 공유 유도', '참여형 서비스로 학생 학습 동기 부여'] }] }
+  },
+  {
+    id: 'canb-ai-care', category: 'ai', org: 'Poly',
+    title: 'CANB AI CARE — AI 상담 솔루션 프로토타입',
+    short: '분산된 학습·평가 데이터를 LLM 기반으로 통합 분석, 데이터 기반 상담 환경을 구축하는 AI 상담 솔루션.',
+    period: '2025.10 ~ 2025.12 (3개월)', role: '기획, 요구사항 정의, UX 설계, 프로토타입 제작', type: '인하우스',
+    bg: '여러 시스템에 흩어져 있던 고객 이력·성과 데이터를 상담 현장에서 즉시 활용하기 어려운 구조, 상담은 담당자 개인의 경험에 의존. 데이터를 실제 의사결정에 연결할 수 있는 페이지 필요.',
+    point: 'Google AI Studio, Gemini, ChatGPT를 활용해 <strong>요약 → 상세 → 분석 → 가이드</strong>로 이어지는 정보 구조와 상담 가이드 로직을 프롬프트로 설계, 실제 동작하는 대시보드 프로토타입으로 직접 구현해 현업 시연. 무분별한 LLM사용 방지 및 비용 절감을 위해 정량적 요소는 Batch로 데이터를 만들어두고, 이를 통해 정성적 요소는 필요한 시기에만 추출할 수 있도록 설계.',
+    result: '화면으로 먼저 검증해 개발 착수 전 요구사항을 명확히 하고, 정성적 상담을 데이터 기반 상담으로 전환할 수 있는 구조 마련. 다만 AI 생성 가이드 문구는 실제 상담 맥락과 어긋나는 경우가 있는데 이는 담당자가 수정 가능한 편집 기능을 함께 구축해 한계 보완.',
+    tools: ['Google AI Studio', 'ChatGPT', 'Gemini'],
+    thumb: 'images/thumb/CANB-AI-CARE_대표이미지.png',
+    images: [
+      { src: 'images/modal/canb-ai-care_1.png', caption: '전체 이미지' },
+      { src: 'images/modal/canb-ai-care_2.png', caption: '데이터 정의서' },
+      { src: 'images/modal/canb-ai-care_3.png', caption: 'AI 분석 및 가이드 영역' },
+      { src: 'images/modal/canb-ai-care_4.png', caption: '고정적 데이터 취합 영역' },
+      { src: 'images/modal/canb-ai-care_5.png', caption: '시기별 데이터 분석 영역' },
+      { src: 'images/modal/canb-ai-care_6.png', caption: '최근 상담 내역' },
+    ],
+    icon: '🤖', iconBg: 'linear-gradient(135deg, rgba(125,211,252,0.15), rgba(165,180,252,0.1))',
+    spec: { title: 'CANB AI CARE 기획 상세', sections: [{ title: '주요 기능', items: ['Dashboard: 학생 데이터 종합 현황', 'Test History: 시기별 성적 변화 추이', '스킬 유형 분석: Listening / Reading / Vocabulary / Grammar', 'AI 상담 가이드: 단계별 멘트 제공', '오답 문항 분석'] }, { title: '시스템 구성', items: ['데이터 소스: DB (FlatQuery) → CANB 통합 학습 데이터 집계', 'AI 분석: POND SA → Prompt Engineering → LLM 분석', '출력: Dashboard (URL Link), 상담리포트 시스템 (PDF/QR Code)'] }, { title: '기획 포인트', items: ['시기별 학생 데이터를 직관적으로 파악할 수 있는 타임라인형 UI', '상담 전 준비에 걸리는 시간을 단축', 'AI 가이드 문구 편집 모드 지원', '상담 결과 Next Step 자동 제안 기능'] }] }
+  },
+  {
+    id: 'call-analysis', category: 'ai', org: 'Poly',
+    title: '상담 녹음 분석 시스템 프로토타입',
+    short: 'STT 기반 자동 요약·정리로 상담 교사의 기록 업무 부담을 제거하고 학생 관리 효율성을 높이는 시스템.',
+    period: '2025.11 ~ 2025.12 (2개월)', role: '기획, 요구사항 정의, UX 설계, 프로토타입 제작', type: '인하우스',
+    bg: '담당자가 다수의 고객을 응대하며 상담 내용을 수기로 기록하느라 많은 시간 소요, 축적된 녹음 데이터는 활용되지 못한 채 방치. 또한 본사 입장에서 현장의 상담 현황 모니터링 요소 확보 필요.',
+    point: 'STT(음성-텍스트 변환)와 LLM 요약을 결합한 처리 파이프라인 직접 설계. 녹음 파일을 감시·처리하는 Orchestra Agent와 화자 인식·분류를 수행하는 Sub Agent 구조로 나누어 Gemini 2.5-flash 기반 프로토타입 구현, 분류 정확도 향상을 위해 프롬프트 반복 테스트 및 개선. 실제 녹취본이 STT 되면서 초래하는 성명, 조직명 등의 부적합성은 리스트를 서버에 별도로 구성. LLM이 이를 참조하여 Text를 추출할 수 있도록 프롬프트 보완.',
+    result: '비정형 음성 데이터를 요약·분류·검색 가능한 운영 데이터로 전환해 기록 업무 부담 제거. 화자 인식 오류나 맥락 누락 등 AI 처리의 한계도 함께 확인하였는데, 결과를 그대로 신뢰하기보다 검수 프로세스와 예외 처리 기준을 함께 설계하는 방향으로 보완.',
+    tools: ['Google AI Studio', 'ChatGPT', 'Gemini'],
+    thumb: 'images/thumb/상담녹음분석_대표이미지.png',
+    images: [
+      { src: 'images/modal/call-analysis_1.png', caption: '동작프로세스' },
+      { src: 'images/modal/call-analysis_2.png', caption: '서비스 구조' },
+      { src: 'images/modal/call-analysis_3.png', caption: '대시보드' },
+      { src: 'images/modal/call-analysis_4.png', caption: 'AI요약' },
+      { src: 'images/modal/call-analysis_5.png', caption: '대화내용' },
+      { src: 'images/modal/call-analysis_6.png', caption: '제작 프롬프트1' },
+      { src: 'images/modal/call-analysis_7.png', caption: '제작 프롬프트2' },
+    ],
+    icon: '🎙️', iconBg: 'linear-gradient(135deg, rgba(134,239,172,0.12), rgba(52,211,153,0.08))',
+    spec: { title: '상담 녹음 분석 시스템 상세', sections: [{ title: '시스템 플로우', items: ['학부모 전화 연결 → CTI 전화기 → 통화 녹음 → 저장 및 전송', '녹음 파일 수신 → STT 추출 → AI 요약 정리', '분석 결과 별도 DB 저장 및 대시보드 연동'] }, { title: 'Agent 구성', items: ['Orchestra Agent: CTI 녹음 파일 감시, 5개 단위 처리', 'Sub Agent: Gemini 2.5-flash STT, 화자인식', 'Gemini LLM: 주제, 요약, 카테고리 분류'] }, { title: '대시보드 주요 지표', items: ['누적 완료 건수 / 처리 상태 / 분석 완료율', '상담 카테고리 비율: 학습성적, 불만, 입학상담 등', '녹음 파일 상세: AI 요약 / 대화 내용 / 기본 정보 탭'] }] }
+  },
+  {
+    id: 'writing-tutor', category: 'ai', org: 'Poly',
+    title: 'AI Writing Tutor 시스템 프로토타입',
+    short: '실제 LLM API를 적용하여 학생의 Writing 실력을 AI가 평가하고, 성장 포트폴리오로 시각화하는 학습 시스템.',
+    period: '2025.08 ~ 2025.09 (2개월)', role: '기획, 요구사항 정의, UX 설계, 프로토타입 제작', type: '인하우스',
+    bg: '프로그램 운영 효과를 정량적으로 확인하기 어려운 상황, 이용자가 자신의 성장 과정을 체감할 수 있는 장치 부족이라는 문제의식에서 출발.',
+    point: '실제 서비스에 붙일 Google Gemini API를 프로토타입 단계에서부터 직접 연동해 <strong>입력 → 평가 → 결과 → 성장 추적</strong>의 전체 흐름 구현. 평가 기준을 다항목 루브릭 형태로 프롬프트에 구조화, Cursor AI로 화면과 로직을 함께 제작하며 API 응답 형식과 실제 화면 반영 방식 검증.',
+    result: '요구사항에는 없던 \'성장성 가시화\' 컨셉을 도입하여 유관부서로부터 긍정적 피드백을 받음. 다만 동일한 입력에도 평가 점수와 피드백이 일부 달라지는 특성이 있어, 평가 항목별 기준과 출력 형식을 프롬프트에 명확히 정의하고 예시를 추가하는 방식으로 프롬프트를 지속적으로 개선함. 추가로 동일 테스트 데이터를 기준으로 결과를 비교·검증하는 방식으로 평가 일관성을 끌어올림.',
+    tools: ['Cursor AI', 'ChatGPT', 'Gemini'],
+    thumb: 'images/thumb/AI Writing Tutor_대표이미지.png',
+    images: [
+      { src: 'images/modal/writing-tutor_1.png', caption: '글 작성' },
+      { src: 'images/modal/writing-tutor_2.png', caption: '피드백1' },
+      { src: 'images/modal/writing-tutor_3.png', caption: '피드백2' },
+      { src: 'images/modal/writing-tutor_4.png', caption: '성장데이터' },
+      { src: 'images/modal/writing-tutor_5.png', caption: '전후 비교' },
+      { src: 'images/modal/writing-tutor_6.png', caption: 'HTML 제작' },
+      { src: 'images/modal/writing-tutor_7.png', caption: 'HTML분리 및 실행' },
+    ],
+    icon: '✍️', iconBg: 'linear-gradient(135deg, rgba(252,165,165,0.12), rgba(245,200,66,0.08))',
+    spec: { title: 'AI Writing Tutor 기획 상세', sections: [{ title: '평가 기능', items: ['CCSS GE (Grade Equivalent) 평가', '6 Traits Writing 평가: Ideas, Organization, Voice, Word Choice, Sentence Fluency, Conventions', 'Revision Task: 수정 방향 선택 → AI 가이드 → 학생 적용 → 재평가'] }, { title: '피드백 & 학습 기능', items: ['무제한 반복 학습 지원', '24시간 피드백 제공', '텍스트 및 음성 기반 피드백'] }, { title: '기술 스택', items: ['Frontend: HTML5, CSS3, JavaScript ES6+', 'Styling: Tailwind CSS', 'Data Viz: Chart.js', 'AI API: Google Gemini API'] }] }
+  },
+  {
+    id: 'ai-platform', category: 'new', org: 'Poly',
+    title: 'AI Platform 개발 1·2차 구축 (Volta)',
+    short: '자사 e-Learning AI 엔진을 통합 관리하는 Admin 플랫폼. 학습 데이터 조회, 통계, 서버 모니터링 등 전 영역 기획 및 PM.',
+    period: '1차) 2024.04~2024.12 / 2차) 2025.04~2025.08', role: 'PM & 기획, QA / 100%', type: '인하우스 + 외주 cowork',
+    bg: '기존 AI Platform은 기능 중심으로 운영되어 엔진별 사용량, 비용, 서비스별 활용 현황을 체계적으로 파악하기 어려웠음.',
+    point: '엔진, 솔루션, 브랜드 단위로 사용량을 집계할 수 있는 데이터 기준 및 구조 정의. 운영자가 필요한 데이터를 빠르게 확인할 수 있도록 조회 조건 및 리포트 화면 기획.',
+    result: '엔진 및 솔루션별 사용량을 체계적으로 관리할 수 있는 구조를 설계하여 운영 데이터 기반 의사결정 환경 구축.',
+    tools: ['Figma', 'Notion', 'MS Office'],
+    thumb: 'images/thumb/AI-Platform_대표이미지.png',
+    images: [
+      { src: 'images/modal/ai-platform_1.png', caption: '플랫폼 회원정보' },
+      { src: 'images/modal/ai-platform_2.png', caption: '상태확인' },
+      { src: 'images/modal/ai-platform_3.png', caption: 'Timeout 데이터' },
+      { src: 'images/modal/ai-platform_4.png', caption: '가입승인메일' },
+      { src: 'images/modal/ai-platform_5.png', caption: 'LLM 데이터 조회' },
+      { src: 'images/modal/ai-platform_6.png', caption: '로그뷰' },
+      { src: 'images/modal/ai-platform_7.png', caption: '발음평가 데이터 조회' },
+      { src: 'images/modal/ai-platform_8.png', caption: '사용량 조회 기획서' },
+    ],
+    icon: '🧠', iconBg: 'linear-gradient(135deg, rgba(165,180,252,0.15), rgba(125,211,252,0.08))',
+    spec: { title: 'AI Platform (Volta) 기획 상세', sections: [{ title: '1차 구성 영역', items: ['Data Management: 학생 오디오/텍스트 데이터 조회', 'Statistics: Brand별 데이터 통계, 학습 완료 현황', 'System Monitor: Log View, 서버 상태 모니터링', 'Service Setting: AI 서비스 기본 설정'] }, { title: '2차 추가 사항', items: ['(신규) Text Data, Text Data_LLM, Grammar Checker 페이지', '(신규) Audio Data_Pron.Eval, Phonics 페이지', '(신규) AI Solution Usage: 엔진/솔루션별 사용량 조회'] }, { title: '성과', items: ['외주 운영사 의존도 제거 → 운영 비용 절감', '데이터 조회 체계화로 AI 엔진 품질 관리 내재화'] }] }
+  },
+  {
+    id: 'adams', category: 'new', org: 'Poly',
+    title: '문항 저작 시스템 ADaMS',
+    short: '노후화된 문제 저작 도구를 대체하는 체계적 문항 DB화 및 다양한 유형 지원 저작 시스템 기획.',
+    period: '2023.12 ~ 2024.03 (4개월)', role: '기획 / 100%', type: '인하우스',
+    bg: '노후화되어 제한된 문제 유형만 출제 가능하며, 비체계적으로 저작된 문항을 관리하는 문제점이 있었음.',
+    point: '다양한 문항 유형을 지원하고 체계적으로 관리할 수 있는 문항 저작·DB화 시스템 기획. Nowntest, Quizrix, Lucid, Axure 등 4개사 벤치마킹 후 자사 요구사항 정의.',
+    result: '문항 저작 관련 여러 모델들을 분석하고 벤치마킹하여 자사에 맞는 저작 시스템을 기획. 개발 비용과 일정 문제로 기획까지만 클로징.',
+    tools: ['MS Office'],
+    thumb: 'images/thumb/ADaMS_대표이미지.png',
+    images: [
+      { src: 'images/modal/adams_1.png', caption: '플로우' },
+      { src: 'images/modal/adams_2.png', caption: '구조도' },
+      { src: 'images/modal/adams_3.png', caption: '코드 정의' },
+      { src: 'images/modal/adams_4.png', caption: '문제 제작 플로우' },
+      { src: 'images/modal/adams_5.png', caption: '문제제작' },
+      { src: 'images/modal/adams_6.png', caption: '문제은행 대시보드' },
+      { src: 'images/modal/adams_7.png', caption: '문제은행' },
+      { src: 'images/modal/adams_8.png', caption: '시험결과확인' },
+    ],
+    icon: '📝', iconBg: 'linear-gradient(135deg, rgba(134,239,172,0.1), rgba(52,211,153,0.06))',
+    spec: { title: 'ADaMS 기획 상세', sections: [{ title: '주요 메뉴 구성', items: ['문항 제작: 다양한 유형 신규/기존 시험 수정, 문항 불러오기', '문제 은행: 문항 검색·필터, 라이브러리 관리', '결과 분석: 학습 완료 현황, 문항별 오답 분석'] }, { title: '벤치마킹 포인트', items: ['Nowntest: 기존 시험 활용 방식', 'Quizrix: 연결하기, 선 긋기 템플릿', 'Lucid: 템플릿 카테고리 구성', 'Axure: Depth별 데이터 자동 노출 설정'] }] }
+  },
+  {
+    id: 'milkt-coaching', category: 'new', org: '천재교과서',
+    title: '밀크T아이 화상 코칭 서비스 구축',
+    short: '법적 분쟁으로 인한 솔루션 교체 상황에서 유아 캐릭터 화상 코칭 서비스를 5개월 내 신규 구축 및 PM.',
+    period: '2022.10 ~ 2023.03 (5개월)', role: 'PM & 기획, QA / 100%', type: '인하우스 + 외부 솔루션 협력사 cowork',
+    bg: '기존 솔루션 업체와의 법적 분쟁에 따라 빠른 솔루션 교체 및 신규 서비스 구축이 필요.',
+    point: '기존 솔루션에 익숙해져 있고, 잦은 오류로 피로감을 느끼는 고객들에게 자사 서비스가 고도화 되었다는 점을 강조. 특히 유아층에 맞는 다양한 시각 요소 활용.',
+    result: '유저(영업부/학부모)의 요구사항을 취합 정리 및 반영하여 구축 관련된 전 과정을 주도. 고객층에 맞춘 다양한 솔루션 기능 기획으로 고객 이탈 방어.',
+    tools: ['MS Office'],
+    thumb: 'images/thumb/화상_대표이미지.png',
+    images: [
+      { src: 'images/modal/milkt-coaching_1.png', caption: '시안' },
+      { src: 'images/modal/milkt-coaching_2.png', caption: '서비스 flow' },
+      { src: 'images/modal/milkt-coaching_3.png', caption: '실행 flow' },
+      { src: 'images/modal/milkt-coaching_4.png', caption: '팝업 process' },
+      { src: 'images/modal/milkt-coaching_5.png', caption: '메인 기획1' },
+      { src: 'images/modal/milkt-coaching_6.png', caption: '메인 기획2' },
+      { src: 'images/modal/milkt-coaching_7.png', caption: '메인 기획3' },
+      { src: 'images/modal/milkt-coaching_8.png', caption: '메인 기획4' },
+    ],
+    achievements: ['유관부서 긍정 평가 9건', '솔루션 안정적 구축 완료'],
+    icon: '📡', iconBg: 'linear-gradient(135deg, rgba(252,165,165,0.12), rgba(251,191,36,0.08))',
+    spec: { title: '밀크T아이 화상 코칭 기획 상세', sections: [{ title: '화상 라이브 서비스 플로우', items: ['학부모 수업 예약 → 교사 예약 확인 → 화상 시작', '수업 전 준비: 목표 도달 현황, 학습 평가', '화상 진행 중: 교안 공유, 화이트보드', '수업 후 평가: 교사 코멘트, 다음 수업 목표 설정'] }, { title: '솔루션 주요 기능', items: ['단일/다중 화상 방 지원 (1:1 / 1:多)', '실시간 화이트보드 공유 및 공동 작성', '유아 캐릭터 이모티콘 및 스티커 시스템', '교사-학생-학부모 3자 권한 분리'] }] }
+  },
+  {
+    id: 'milkt-parentcall', category: 'new', org: '천재교과서',
+    title: '밀크T아이 엄마아빠콜 화상 통화 서비스 구축',
+    short: '태블릿(학습기)과 스마트폰 간 화상 통화 서비스. 경쟁사 대비 차별화 서비스로 App 다운로드 기대치 대비 130% 달성.',
+    period: '2022.01 ~ 2022.08 (8개월)', role: 'PM & 기획, QA / 100%', type: '인하우스 + 외부 솔루션 협력사 cowork',
+    bg: '경쟁업체 대비 경쟁력 강화 서비스 필요에 따라 보호자가 자녀 안전을 확인할 수 있는 서비스를 런칭.',
+    point: '학부모들의 학부모 앱 이용을 유도, 4세~6세 타겟층에 맞는 문구 및 이미지와 아이콘 사용.',
+    result: '엄마아빠콜 App 다운로드 횟수 기대치 대비 30% 이상 달성 (1,000회 이상). 서비스 이용 횟수 약 64,000건으로 경쟁력 강화에 도움.',
+    tools: ['MS Office'],
+    thumb: 'images/thumb/엄마아빠콜_대표이미지.png',
+    images: [
+      { src: 'images/modal/milkt-parentcall_1.png', caption: '시안' },
+      { src: 'images/modal/milkt-parentcall_2.png', caption: '화상통화 flow' },
+      { src: 'images/modal/milkt-parentcall_3.png', caption: '수신팝업 기획' },
+      { src: 'images/modal/milkt-parentcall_4.png', caption: '태블릿 화면 기획' },
+      { src: 'images/modal/milkt-parentcall_5.png', caption: '휴대폰 알림 기획' },
+      { src: 'images/modal/milkt-parentcall_6.png', caption: '모바일 화면 기획' },
+      { src: 'images/modal/milkt-parentcall_7.png', caption: '환경설정 기획' },
+    ],
+    achievements: ['App 다운로드 기대치 130%', '누적 이용 64,000건'],
+    icon: '📱', iconBg: 'linear-gradient(135deg, rgba(134,239,172,0.12), rgba(125,211,252,0.08))',
+    spec: { title: '엄마아빠콜 서비스 기획 상세', sections: [{ title: '화상 통화 플로우', items: ['학부모 앱 → 엄마아빠콜 → 학생(태블릿) 화상 통화 수신', '통화 이력 확인 (시작/종료 시간, 날짜)', '캐릭터 화면 전환 기능'] }, { title: '성과 지표', items: ['출시 8개월 기준 App 다운로드 1,000건+', '서비스 이용 건수 64,000건 이상', '경쟁업체 대비 차별화로 이탈 방어 기여'] }] }
+  },
+  {
+    id: 'teacher-page', category: 'ops', org: 'Poly',
+    title: "Teacher's Page 개선 (.net → Java)",
+    short: '노후화된 .net 강사 관리 페이지를 Java로 전환, 월평균 오류 10건→0건, 로딩 속도 및 업무 플로우 전면 개선.',
+    period: '2024.10 ~ 2025.03 (6개월)', role: '기획 / 100%', type: '인하우스',
+    bg: '.net으로 개발되어 노후화된 캠퍼스 강사용 관리 페이지를 Java로 개발하여 개선.',
+    point: '기존 운영 상 불편 사항 및 요구사항 취합. 페이지 오류 개선 및 사용자 편의성 강조.',
+    result: '페이지 오류 발생 건 + 클레임 건 월평균 10건 → 0건으로 감소. 로딩 속도 및 업무 Flow 개선으로 강사 업무 처리 시간 단축.',
+    tools: ['MS Office', 'ChatGPT'],
+    thumb: 'images/thumb/티쳐스_대표이미지.png',
+    images: [
+      { src: 'images/modal/teacher-page_1.png', caption: 'Q&A flow' },
+      { src: 'images/modal/teacher-page_2.png', caption: 'Q&A리스트' },
+      { src: 'images/modal/teacher-page_3.png', caption: 'Q&A 기획' },
+      { src: 'images/modal/teacher-page_4.png', caption: '런처 기획1' },
+      { src: 'images/modal/teacher-page_5.png', caption: '런처 기획2' },
+      { src: 'images/modal/teacher-page_6.png', caption: '런처용 데이터' },
+      { src: 'images/modal/teacher-page_7.png', caption: '리소스 게시판 기획' },
+      { src: 'images/modal/teacher-page_8.png', caption: 'LNB구조' },
+    ],
+    achievements: ['월 오류 10건→0건', '업무 처리 속도 향상'],
+    icon: '🖥️', iconBg: 'linear-gradient(135deg, rgba(125,211,252,0.1), rgba(165,180,252,0.08))',
+    spec: { title: "Teacher's Page 개선 기획 상세", sections: [{ title: '개선 범위', items: ['학생 관리: 수강생 목록, 학습 현황, 결석 관리', '수업 현황: 당일 스케줄, 수업 진행 상태 실시간 반영', '테스트 관리: 학생별 결과 조회 및 오답 분석'] }, { title: '성과', items: ['월평균 오류/클레임 10건 → 0건', '강사 업무 처리 속도 향상', '안정적 운영 환경으로 영업팀 신뢰 회복'] }] }
+  },
+  {
+    id: 'indonesia-qr', category: 'ops', org: 'Poly',
+    title: '인도네시아용 QR 교재 음원 플레이어',
+    short: '인도네시아 사업 확장에 맞춰 3~5세 교재 QR 코드로 앱 설치 없이 음원 스트리밍이 가능한 모바일 플레이어 개발.',
+    period: '2024.04 (1개월)', role: '기획 / 100%', type: '인하우스',
+    bg: '인도네시아 사업 확장에 따른 기존 관리자 페이지를 개선하여 현지 특성에 맞는 QR 교재 음원 플레이어 개발 필요.',
+    point: '3~5세 교재 내에 QR 코드를 삽입하여 학부모 차원에서 학습 음원을 스트리밍으로 들을 수 있도록 함.',
+    result: '인도네시아 현지 학부모가 편리하게 교재 음원 스트리밍이 가능해졌으며, 앱 설치 없이 모바일 브라우저에서 바로 재생 지원.',
+    tools: ['MS Office'],
+    thumb: 'images/thumb/QR음원_대표이미지.png',
+    images: [
+      { src: 'images/modal/indonesia-qr_1.png', caption: '플레이어' },
+      { src: 'images/modal/indonesia-qr_2.png', caption: 'sum_qr관리' },
+      { src: 'images/modal/indonesia-qr_3.png', caption: 'sum_qr생성' },
+      { src: 'images/modal/indonesia-qr_4.png', caption: '음원관리기획1' },
+      { src: 'images/modal/indonesia-qr_5.png', caption: '음원관리기획2' },
+      { src: 'images/modal/indonesia-qr_6.png', caption: '재생리스트기획' },
+      { src: 'images/modal/indonesia-qr_7.png', caption: '재생 flow' },
+    ],
+    icon: '🎵', iconBg: 'linear-gradient(135deg, rgba(245,200,66,0.1), rgba(251,191,36,0.06))',
+    spec: { title: 'QR 음원 플레이어 기획 상세', sections: [{ title: '주요 기능', items: ['QR 관리 페이지: 교재별 QR 코드 목록 조회 및 생성', 'Track 관리: 트랙 추가/삭제/순서 변경, QR 이미지 다운로드', '모바일 브라우저 음원 Player: 앱 설치 없이 직접 재생'] }] }
+  },
+  {
+    id: 'char-coaching', category: 'ops', org: '천재교과서',
+    title: '캐릭터 화상 솔루션 고도화 및 콘텐츠 관리 시스템 구축',
+    short: '수업마다 교안을 매번 업로드하던 비효율을 제거하고 동적 캐릭터 표출 및 감정 표현 기능을 고도화.',
+    period: '2023.02 ~ 2023.07 (5개월)', role: 'PM & 기획, QA / 100%', type: '인하우스 + 외부 솔루션 협력사 cowork',
+    bg: '화상 코칭에 사용하는 교안을 수업 때마다 동일하게 업로드해야 하는 불편함을 개선하고, 오류 상황 발생 시 빠르게 대응할 수 있는 기초 데이터 확인 필요.',
+    point: '각 주차에 맞는 수업 교안 업로드는 관리팀에서 1회만 진행하여 불필요한 절차를 생략. 캐릭터 표출 영역과 감정 표현 영역의 동적화 및 다양화.',
+    result: '체계적인 교안, 콘텐츠 관리 시스템을 구축하여 화상 코칭 서비스의 퀄리티를 높임.',
+    tools: ['MS Office'],
+    thumb: 'images/thumb/화상관리자_대표이미지.png',
+    images: [
+      { src: 'images/modal/char-coaching_1.png', caption: '콘텐츠관리 기획1' },
+      { src: 'images/modal/char-coaching_2.png', caption: '콘텐츠관리 기획2' },
+      { src: 'images/modal/char-coaching_3.png', caption: '관리 권한 기획' },
+      { src: 'images/modal/char-coaching_4.png', caption: '로그' },
+      { src: 'images/modal/char-coaching_5.png', caption: '모니터링 페이지 기획' },
+      { src: 'images/modal/char-coaching_6.png', caption: '수업리스트 기획' },
+      { src: 'images/modal/char-coaching_7.png', caption: '수업정보상세 기획' },
+    ],
+    icon: '🎭', iconBg: 'linear-gradient(135deg, rgba(165,180,252,0.12), rgba(134,239,172,0.06))',
+    spec: { title: '화상 솔루션 고도화 기획 상세', sections: [{ title: '콘텐츠 관리 시스템', items: ['주차별 수업 교안 사전 업로드 (관리팀 1회 등록 → 강사 자동 반영)', '교안 버전 관리: 수정 이력 및 배포 상태 추적'] }, { title: '솔루션 고도화', items: ['캐릭터 표출 영역 동적화: 상황별 애니메이션 다양화', '감정 표현 영역 확대: 이모션 세트 추가', '수업 중 실시간 콘텐츠 전환 기능'] }] }
+  },
+  {
+    id: 'crm', category: 'ops', org: '천재교과서',
+    title: 'CRM 학습관리 페이지 개선',
+    short: '사용하지 않던 CRM 학습관리 페이지를 활용·개선하여 강사들의 재택 업무 편의성과 학습생 관리 만족도를 향상.',
+    period: '2022.12 ~ 2023.01 (1개월)', role: 'PM & 기획, QA / 100%', type: '인하우스',
+    bg: '기존 CRM 시스템은 데이터 오류 및 불명확한 구조로 인해 사용자가 원하는 정보를 정확하게 조회하기 어려운 문제가 있었음.',
+    point: '학습 데이터의 오류 및 불일치 문제를 해결하기 위해 데이터 정합성 기준 및 조회 로직 개선. 사용자 관점의 데이터 노출 기준 재설계.',
+    result: '데이터 오류를 개선하고 조회 구조를 정리하여 정보 신뢰도 및 사용성 향상. 운영자가 데이터를 직관적으로 활용할 수 있는 관리 환경 구축.',
+    tools: ['MS Office'],
+    thumb: 'images/thumb/CRM_대표이미지.png',
+    images: [
+      { src: 'images/modal/crm_1.png', caption: 'crm 기획1' },
+      { src: 'images/modal/crm_2.png', caption: 'crm 기획2' },
+      { src: 'images/modal/crm_3.png', caption: 'crm 기획3' },
+      { src: 'images/modal/crm_4.png', caption: 'crm 기획4' },
+      { src: 'images/modal/crm_5.png', caption: 'crm 기획5' },
+      { src: 'images/modal/crm_6.png', caption: 'crm 기획6' },
+    ],
+    icon: '📊', iconBg: 'linear-gradient(135deg, rgba(252,165,165,0.1), rgba(245,200,66,0.06))',
+    spec: { title: 'CRM 학습관리 개선 기획 상세', sections: [{ title: '개선 포인트', items: ['데이터 오류 수정: 학습생 데이터 오류 노출 구간 정비', '검색 조건 통합: 동일 조건 삭제', '최초완강일 기준 데이터 노출'] }, { title: '기능 개선', items: ['학습생 필터: 조, 학년, 나이, 학습 현황 등 다중 조건 지원', '학습관리 현황표: 학습 완료 횟수, 결석 관리, 진도 한눈에 확인'] }] }
+  },
+  {
+    id: 'st-unitas', category: 'sales', org: 'ST Unitas',
+    title: '경찰승진단기 매출 향상 개선안',
+    short: 'FGI 기반 현직 고객 목소리로 수립한 전략으로 일 평균 매출 1,000만원 경신, 일 최대 9,000만원, YoY 150% 달성.',
+    period: '2020.04 ~ 2020.09 (5개월)', role: '전략 기획 및 실행', type: '인하우스',
+    bg: '강좌 프리패스 환불이 예년과 다르게 지속적으로 인입.',
+    point: '현직 고객들로부터 현 경승단기의 불편사항과 개선 희망사항을 FGI 후 매출 향상 방안 수립.',
+    result: '실제 고객들의 목소리를 직접 듣고 그에 맞는 전략을 수립하여 2022년 10월 매출 일 평균 1,000만원 경신. 일 최대 매출 9,000만원, YoY 150% 달성.',
+    tools: [],
+    thumb: 'images/thumb/경찰승진단기_대표이미지.PNG',
+    images: [
+      { src: 'images/modal/st-unitas_1.png', caption: '개선안1' },
+      { src: 'images/modal/st-unitas_2.png', caption: '개선안2' },
+      { src: 'images/modal/st-unitas_3.png', caption: '개선안3' },
+      { src: 'images/modal/st-unitas_4.png', caption: '개선안4' },
+      { src: 'images/modal/st-unitas_5.png', caption: '개선안5' },
+      { src: 'images/modal/st-unitas_6.png', caption: '개선안6' },
+      { src: 'images/modal/st-unitas_7.png', caption: '개선안7' },
+    ],
+    achievements: ['일 매출 9,000만원', 'YoY 150% 달성'],
+    icon: '📈', iconBg: 'linear-gradient(135deg, rgba(245,200,66,0.15), rgba(251,191,36,0.08))',
+    spec: { title: '경찰승진단기 개선 전략 상세', sections: [{ title: '분석 과정', items: ['만족도 설문 결과 분석 (만족 51%, 불만족 49%)', '불만족 사유: 강사 전문성 부재 (69%), 학습관리 기능 부족 (43%)', '경쟁사 모니터링 및 커뮤니티 반응 추적'] }, { title: '단기 개선방안', items: ['액션 대상 확대: 기존 탈락자 대상 추가', '사이트 전반적인 점검 및 보수', '강사별 대표강의 / OT / 맛보기 강의 등록'] }, { title: '중장기 개선방안', items: ['승진 전문 강사 강화, 재입문 콘텐츠 제작', '테마 특강 다양화', '강의 수준 노출, 프리패스 구성 개선'] }] }
+  },
+
+];
+
+const catLabels = {
+  ai: { label: 'AI 프로토타입', cls: 'cat-ai' },
+  new: { label: '신규 구축', cls: 'cat-new' },
+  ops: { label: '운영 개선', cls: 'cat-ops' },
+  sales: { label: '매출 전략', cls: 'cat-sales' },
+  tool: { label: '자동화도구 제작', cls: 'cat-tool' }
+};
+
+function renderCards(filter) {
+  const grid = document.getElementById('projectsGrid');
+  const filtered = filter === 'all' ? projects : projects.filter(p => p.category === filter);
+  grid.innerHTML = '';
+  filtered.forEach((p, i) => {
+    const cat = catLabels[p.category];
+    const card = document.createElement('div');
+    card.className = 'project-card';
+    card.style.animationDelay = (i * 0.06) + 's';
+    card.onclick = () => openModal(p.id);
+    const thumbHTML = p.thumb
+      ? `<img class="card-thumb-img" src="${p.thumb}" alt="" onload="this.classList.add('loaded')" onerror="this.style.display='none'">`
+      : '';
+    card.innerHTML = `
+      <div class="card-thumb">
+        ${thumbHTML}
+        <div class="card-thumb-inner"><div class="card-thumb-icon">${p.icon}</div></div>
+        <div class="card-thumb-gradient" style="background:${p.iconBg}"></div>
+        <span class="card-category ${cat.cls}">${cat.label}</span>
+      </div>
+      <div class="card-body">
+        <div class="card-org">${p.org}</div>
+        <div class="card-title">${p.title}</div>
+        <div class="card-desc">${p.short}</div>
+        <div class="card-meta">
+          <span class="card-period">${p.period}</span>
+          <div class="card-arrow">→</div>
+        </div>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+function filterCards(filter, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCards(filter);
+}
+
+renderCards('all');
+
+let _currentModalId = '';
+
+function openModal(id) {
+  const p = projects.find(x => x.id === id);
+  if (!p) return;
+  const cat = catLabels[p.category];
+  _currentModalId = id;
+  document.getElementById('modalBadge').textContent = cat.label;
+  document.getElementById('modalTitle').textContent = p.title;
+
+  // 이미지가 있는 것만 필터링 (주석 처리된 것 제외, src가 있는 항목만)
+  const imgs = (p.images || []).filter(img => img && img.src);
+  let galleryHTML = '';
+
+  if (imgs.length > 0) {
+    // 이미지 수에 따라 슬라이드 너비 조정
+    const isWide = imgs.length <= 3;
+    const slides = imgs.map((img, i) => `
+      <div class="gallery-slide${isWide ? ' wide-slide' : ''}" data-index="${i}" onclick="openViewer(${i})">
+        <img src="${img.src}" alt="${img.caption || ''}"
+             onload="this.classList.add('loaded')"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="gallery-slide-ph" style="display:none;">
+          <div class="ph-emoji">🖼️</div>
+          <span>${img.caption || ''}</span>
+        </div>
+        ${img.caption ? `<div class="gallery-slide-caption">${img.caption}</div>` : ''}
+      </div>`).join('');
+
+    const dots = imgs.map((_, i) =>
+      `<div class="gallery-dot${i === 0 ? ' active' : ''}" data-dot="${i}"></div>`).join('');
+    const showArrows = imgs.length > 4;
+
+    galleryHTML = `
+      <div class="modal-section modal-img-gallery-wrap">
+        <div class="modal-section-title">주요 이미지</div>
+        <div class="gallery-wrap">
+          ${showArrows ? `<button class="gallery-arrow gallery-arrow-left hidden" id="galleryLeft" onclick="galleryScroll(-1)">&#8249;</button>` : ''}
+          <div class="modal-img-gallery" id="modalGallery">${slides}</div>
+          ${showArrows ? `<button class="gallery-arrow gallery-arrow-right" id="galleryRight" onclick="galleryScroll(1)">&#8250;</button>` : ''}
+        </div>
+        <div class="gallery-dots" id="galleryDots">${dots}</div>
+      </div>`;
+  }
+
+  const achieveHTML = p.achievements
+    ? `<div class="modal-section"><div class="modal-section-title">성과 하이라이트</div><div>${p.achievements.map(a => `<span class="achievement">✓ ${a}</span>`).join('')}</div></div>`
+    : '';
+
+  document.getElementById('modalBody').innerHTML = `
+    ${galleryHTML}
+    <div class="modal-section"><div class="modal-section-title">프로젝트 정보</div><div class="info-grid">
+      <div class="info-item"><div class="info-label">기간</div><div class="info-value">${p.period}</div></div>
+      <div class="info-item"><div class="info-label">역할</div><div class="info-value">${p.role}</div></div>
+      <div class="info-item"><div class="info-label">형태</div><div class="info-value">${p.type}</div></div>
+      <div class="info-item"><div class="info-label">분류</div><div class="info-value">${cat.label}</div></div>
+    </div></div>
+    <div class="modal-section"><div class="modal-section-title">프로젝트 배경</div><p class="modal-text">${p.bg}</p></div>
+    <div class="modal-section"><div class="modal-section-title">${(p.category === 'ai' || p.category === 'tool') ? '기획 포인트 & AI 활용 방식' : '기획 포인트'}</div><div class="highlight-box">${p.point}</div></div>
+    <div class="modal-section"><div class="modal-section-title">성과 / 결과</div><p class="modal-text">${p.result}</p></div>
+    ${achieveHTML}
+    ${p.tools.length > 0 ? `<div class="modal-section"><div class="modal-section-title">사용 툴</div><div class="tools-row">${p.tools.map(t => `<span class="tool-chip">${t}</span>`).join('')}</div></div>` : ''}
+  `;
+
+  document.getElementById('mainModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  // GA4 이벤트: 프로젝트 모달 열림
+  if (typeof gtag === 'function') {
+    gtag('event', 'project_view', {
+      project_id: p.id,
+      project_title: p.title,
+      project_category: p.category
+    });
+  }
+
+  if (imgs.length > 0) initGallery(imgs);
+}
+
+function initGallery(imgs) {
+  const gallery = document.getElementById('modalGallery');
+  const dotsEl = document.getElementById('galleryDots');
+  if (!gallery || !dotsEl) return;
+
+  const leftBtn = document.getElementById('galleryLeft');
+  const rightBtn = document.getElementById('galleryRight');
+  const allDots = dotsEl.querySelectorAll('.gallery-dot');
+
+  function setDot(idx) {
+    allDots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  }
+  function updateArrows() {
+    const s = gallery.scrollLeft;
+    const max = gallery.scrollWidth - gallery.clientWidth;
+    if (leftBtn) leftBtn.classList.toggle('hidden', s < 4);
+    if (rightBtn) rightBtn.classList.toggle('hidden', max <= 4 || s >= max - 4);
+  }
+  function onScroll() {
+    const firstSlide = gallery.querySelector('.gallery-slide');
+    if (!firstSlide) return;
+    const slotW = firstSlide.offsetWidth + 10;
+    const idx = Math.min(Math.round(gallery.scrollLeft / slotW), allDots.length - 1);
+    setDot(idx);
+    updateArrows();
+  }
+
+  gallery.scrollLeft = 0;
+  setDot(0);
+  updateArrows();
+  gallery.addEventListener('scroll', onScroll, { passive: true });
+
+  allDots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      const firstSlide = gallery.querySelector('.gallery-slide');
+      if (!firstSlide) return;
+      const slotW = firstSlide.offsetWidth + 10;
+      gallery.scrollTo({ left: slotW * i, behavior: 'smooth' });
+    });
+  });
+
+  let isDown = false, startX = 0, scrollLeft = 0, moved = false;
+  gallery.addEventListener('mousedown', e => { isDown = true; moved = false; gallery.classList.add('grabbing'); startX = e.pageX - gallery.offsetLeft; scrollLeft = gallery.scrollLeft; });
+  gallery.addEventListener('mouseleave', () => { isDown = false; gallery.classList.remove('grabbing'); });
+  gallery.addEventListener('mouseup', () => { isDown = false; gallery.classList.remove('grabbing'); });
+  gallery.addEventListener('mousemove', e => { if (!isDown) return; e.preventDefault(); moved = true; gallery.scrollLeft = scrollLeft - (e.pageX - gallery.offsetLeft - startX) * 1.1; });
+  gallery.addEventListener('click', e => { if (moved) { e.stopPropagation(); moved = false; } }, true);
+}
+
+function galleryScroll(dir) {
+  const gallery = document.getElementById('modalGallery');
+  if (!gallery) return;
+  const slideW = gallery.querySelector('.gallery-slide')?.offsetWidth || 160;
+  gallery.scrollBy({ left: dir * (slideW + 10) * 2, behavior: 'smooth' });
+}
+
+let _viewerImgs = [], _viewerIdx = 0;
+
+function openViewer(startIdx) {
+  const p = projects.find(x => x.id === _currentModalId);
+  if (!p) return;
+  const imgs = (p.images || []).filter(img => img && img.src);
+  if (!imgs.length) return;
+  _viewerImgs = imgs;
+  _viewerIdx = startIdx;
+  renderViewer();
+  document.getElementById('imgViewer').classList.add('open');
+}
+
+function renderViewer() {
+  const total = _viewerImgs.length;
+  const cur = _viewerImgs[_viewerIdx];
+  document.getElementById('viewerCounter').textContent = `${_viewerIdx + 1} / ${total}`;
+  document.getElementById('viewerCaption').textContent = cur.caption || '';
+  const img = document.getElementById('viewerImg');
+  img.style.opacity = '0';
+  img.src = cur.src;
+  img.alt = cur.caption || '';
+  img.onload = () => { img.style.opacity = '1'; };
+  img.onerror = () => { img.style.opacity = '0.3'; };
+  document.getElementById('viewerPrev').classList.toggle('disabled', _viewerIdx === 0);
+  document.getElementById('viewerNext').classList.toggle('disabled', _viewerIdx === total - 1);
+  const strip = document.getElementById('viewerStrip');
+  strip.innerHTML = _viewerImgs.map((im, i) => `
+    <div class="viewer-thumb${i === _viewerIdx ? ' active' : ''}" onclick="viewerGoTo(${i})">
+      <img src="${im.src}" alt="${im.caption || ''}" onerror="this.style.opacity='.2'">
+    </div>`).join('');
+  requestAnimationFrame(() => {
+    const active = strip.querySelector('.viewer-thumb.active');
+    if (active) active.scrollIntoView({ inline: 'center', block: 'nearest' });
+  });
+}
+
+function viewerNav(dir) {
+  const next = _viewerIdx + dir;
+  if (next < 0 || next >= _viewerImgs.length) return;
+  _viewerIdx = next;
+  renderViewer();
+}
+function viewerGoTo(idx) { _viewerIdx = idx; renderViewer(); }
+function closeViewer() { document.getElementById('imgViewer').classList.remove('open'); }
+function onViewerOverlayClick(e) { if (e.target === document.getElementById('imgViewer')) closeViewer(); }
+
+function closeMainModal() {
+  closeViewer();
+  document.getElementById('mainModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModal(e) { if (e.target === document.getElementById('mainModal')) closeMainModal(); }
+
+function openSubModal(id) {
+  const p = projects.find(x => x.id === id);
+  if (!p || !p.spec) return;
+  document.getElementById('subModalTitle').textContent = p.spec.title;
+  document.getElementById('subModalBody').innerHTML = p.spec.sections.map(s =>
+    `<div class="spec-block"><div class="spec-block-title">${s.title}</div><ul class="spec-list">${s.items.map(i => `<li>${i}</li>`).join('')}</ul></div>`
+  ).join('');
+  document.getElementById('subModal').classList.add('open');
+
+  // GA4 이벤트: 기능 명세 모달 열림
+  if (typeof gtag === 'function') {
+    gtag('event', 'spec_view', {
+      project_id: p.id,
+      project_title: p.title
+    });
+  }
+}
+function closeSubModal(e) {
+  if (!e || e.target === document.getElementById('subModal')) document.getElementById('subModal').classList.remove('open');
+}
+
+document.addEventListener('keydown', e => {
+  const viewerOpen = document.getElementById('imgViewer').classList.contains('open');
+  const aboutOpen = document.getElementById('aboutMeModal').classList.contains('open');
+  if (e.key === 'Escape') {
+    if (viewerOpen) { closeViewer(); return; }
+    if (aboutOpen) { closeAboutMeBtn(); return; }
+    closeSubModal(); closeMainModal();
+  }
+  if (viewerOpen) {
+    if (e.key === 'ArrowLeft') viewerNav(-1);
+    if (e.key === 'ArrowRight') viewerNav(1);
+  }
+});
+
+/* ══════════════════════════════════
+   ABOUT ME MODAL
+══════════════════════════════════ */
+const aboutMeData = [
+  { q: '어떤 경력과 배경을 가진 지원자인가요?', a: `교육 서비스 분야에서 커리어를 시작했지만,\n특정 도메인에 한정되기보다 **서비스 구조와 사용자 흐름을 중심**으로 기획을 해왔습니다.\n운영 개선, 신규 서비스 구축, AI 기반 프로토타입 제작 등 다양한 프로젝트를 수행하며,\n**문제를 구조화하고 실제로 작동하는 서비스로 구현하는 과정**에 초점을 두었습니다.\n현재는 이러한 경험을 바탕으로, 다양한 산업에서도 적용 가능한 서비스기획 역량을 확장해 나가고 있습니다.`, summary: [{ icon: '🏫', text: '교육 서비스 도메인에서 시작한 서비스기획 커리어' }, { icon: '🔧', text: '운영 개선·신규 구축·AI 프로토타입 등 다양한 유형의 프로젝트 수행' }, { icon: '🌐', text: '도메인을 넘어 확장 가능한 기획 역량 보유' }] },
+  { q: '어떤 서비스기획자인가요?', a: `아이디어를 제안하는 것보다, **실제로 작동하는 구조를 만드는 기획자**에 가깝습니다.\n사용자가 어떤 흐름으로 진입하고 어떤 정보를 보게 되는지 설계하는 것을 중요하게 생각하며,\n**화면 구조와 정보 우선순위를 구체적으로 정리하는 데 강점**이 있습니다.`, summary: [{ icon: '⚙️', text: '아이디어보다 실제로 작동하는 구조 설계에 집중' }, { icon: '🗺️', text: '사용자 진입 흐름과 정보 노출 순서를 중심으로 설계' }, { icon: '📐', text: '화면 구조와 정보 우선순위를 구체적으로 정의하는 강점' }] },
+  { q: '데이터 관련 역량은 어느 정도인가요?', a: `**서비스 기획 관점에서 필요한 데이터 구조와 조회 기준을 설계하는 데 강점**이 있습니다.\n특히 대시보드, 상담 데이터, 학습 데이터와 관련된 프로젝트를 통해\n어떤 데이터를 어떤 기준으로 보여줘야 사용자에게 도움이 되는지 고민해 왔습니다.\n관련하여 **ADsP(데이터분석 준전문가) 자격증을 보유**하고 있으며,\n**SQLD 자격증을 취득하며 SQL 활용 역량을 갖추었습니다.**\n데이터 모델링에 대한 이해를 바탕으로 기본적인 함수 사용 및 데이터 조회·가공 쿼리 작성이 가능합니다.`, summary: [{ icon: '📊', text: '기획 관점의 데이터 구조·조회 기준 설계 경험 보유' }, { icon: '🎓', text: 'ADsP(데이터분석 준전문가) 자격증 보유' }, { icon: '📚', text: 'SQL 활용 역량 보유(함수 사용, 데이터 조회 등)' }] },
+  { q: 'AI를 실무에 어떻게 활용하고 있나요?', a: `AI를 단순 생산성 도구로 사용하는 것을 넘어서,\n**기획안을 빠르게 검증하고 실제로 작동하는 프로토타입을 만드는 데 활용**하고 있습니다.\nGemini, ChatGPT, Cursor 등을 활용해 화면 구조를 구현하고 기능 흐름을 직접 확인하면서 **기획의 완성도를 높이는 방식**으로 사용하고 있습니다.`, summary: [{ icon: '🤖', text: 'AI로 기획안을 빠르게 검증하고 프로토타입 구현' }, { icon: '🛠️', text: 'Gemini·ChatGPT·Cursor 등 다양한 AI 툴 실무 활용' }, { icon: '✅', text: '기능 흐름을 직접 확인하며 기획 완성도를 높이는 방식' }] },
+  { q: '가장 강점이 잘 드러나는 프로젝트는 무엇인가요?', a: `**상담 솔루션(CANB AI CARE)과 상담 녹음 분석 시스템** 프로젝트에서 제 강점이 가장 잘 드러난다고 생각합니다.\n이 프로젝트들을 통해 분산된 데이터를 통합하고,\n**상담에 필요한 정보를 한 화면에서 확인할 수 있도록 구조화**하는 경험을 했으며,\n운영 관점에서 의미 있는 정보가 무엇인지 고민하는 기획을 진행했습니다.`, summary: [{ icon: '🔗', text: '분산 데이터를 통합해 한 화면에서 확인 가능한 구조로 설계' }, { icon: '💬', text: 'CANB AI CARE·녹음 분석 시스템에서 기획 강점 발휘' }, { icon: '🎯', text: '운영 관점에서 의미 있는 정보 기준을 정의하는 기획' }] },
+  { q: '협업할 때 어떤 스타일인가요?', a: `**모호한 요구사항을 구조와 기준으로 정리해주는 역할**을 주로 합니다.\n기능 단위로만 정리하기보다는 사용자 흐름, 예외 케이스, 데이터 기준까지 함께 정리하여 협업 과정에서 발생할 수 있는 오해를 줄이려고 합니다.\n가능한 경우 **화면 시안이나 프로토타입 형태로 공유**해 빠르게 합의점을 찾는 편입니다.`, summary: [{ icon: '🧩', text: '모호한 요구사항을 구조·기준으로 명확하게 정리' }, { icon: '⚠️', text: '예외 케이스·데이터 기준까지 포함해 오해를 사전 차단' }, { icon: '🖼️', text: '시안·프로토타입 공유로 빠른 합의점 도출' }] },
+  { q: '앞으로 어떤 기획자로 성장하고 싶나요?', a: `**데이터와 AI를 이해하고, 실제 서비스에 적용할 수 있는 기획자**로 성장하고 싶습니다.\n단순히 요구사항을 정리하는 역할을 넘어서,\n사용자 흐름과 데이터 흐름을 함께 고려해 서비스 구조를 설계하고,\n**기획 단계에서부터 실행 가능성을 검증**할 수 있는 기획자가 되고자 합니다.\n특히 AI를 활용한 기능 기획과 프로토타입 제작 경험을 확장해\n**아이디어를 실제로 구현 가능한 형태까지 연결하는 역량**을 더욱 강화하고 싶습니다.\n또한 **데이터를 바탕으로 사업 전략을 구상할 수 있는 역량을 강화**하여 담당하는 상품을 개선하고 관리하고 싶습니다.`, summary: [{ icon: '🚀', text: '데이터·AI를 실제 서비스에 적용할 수 있는 기획자 목표' }, { icon: '🔍', text: '기획 단계부터 실행 가능성을 직접 검증하는 역량 추구' }, { icon: '💡', text: '아이디어를 구현 가능한 형태까지 연결하는 실행력 강화' }] }
+];
+
+function parseAboutText(str) {
+  return str.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+}
+
+let _aboutActiveIdx = 0;
+
+function openAboutMe() {
+  const modal = document.getElementById('aboutMeModal');
+  const qList = document.getElementById('aboutmeQuestions');
+  qList.innerHTML = aboutMeData.map((item, i) => `
+    <div class="aboutme-q-item${i === 0 ? ' active' : ''}" onclick="selectAboutQ(${i})">
+      <span class="aboutme-q-num">Q${String(i + 1).padStart(2, '0')}</span>
+      ${item.q}
+    </div>`).join('');
+  _aboutActiveIdx = 0;
+  renderAboutAnswer(0);
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  // GA4 이벤트: 자기소개 모달 열림
+  if (typeof gtag === 'function') {
+    gtag('event', 'about_me_view');
+  }
+}
+
+function selectAboutQ(idx) {
+  _aboutActiveIdx = idx;
+  document.querySelectorAll('.aboutme-q-item').forEach((el, i) => el.classList.toggle('active', i === idx));
+  renderAboutAnswer(idx);
+}
+
+function renderAboutAnswer(idx) {
+  const item = aboutMeData[idx];
+  const ans = document.getElementById('aboutmeAnswer');
+  const cardsHTML = item.summary.map(s => `
+    <div class="summary-card">
+      <div class="summary-card-icon">${s.icon}</div>
+      <div class="summary-card-text">${s.text}</div>
+    </div>`).join('');
+  ans.innerHTML = `<p class="aboutme-ans-text">${parseAboutText(item.a)}</p><div class="aboutme-summary">${cardsHTML}</div>`;
+  ans.scrollTop = 0;
+}
+
+function closeAboutMeBtn() {
+  document.getElementById('aboutMeModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeAboutMe(e) {
+  if (e.target === document.getElementById('aboutMeModal')) closeAboutMeBtn();
+}
+</script>
+</body>
+</html>
