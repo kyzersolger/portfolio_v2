@@ -1,20 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8"/>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5CX38NHMGW"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5CX38NHMGW"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-5CX38NHMGW');
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Portfolio — Keon-seop KIM</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&amp;family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --black: #0a0a0a;
@@ -357,136 +358,330 @@
   .summary-card { background: rgba(245,200,66,0.05); border: 1px solid rgba(245,200,66,0.28); border-radius: 12px; padding: 0.9rem 1rem; display: flex; flex-direction: column; gap: 0.4rem; }
   .summary-card-icon { font-size: 1.1rem; line-height: 1; }
   .summary-card-text { font-size: 0.75rem; font-weight: 500; color: var(--accent); line-height: 1.55; }
+
+  /* ===== 주요 경력 영역 ===== */
+  .career-section { padding-top: 6rem; padding-bottom: 6rem; }
+  .career-heading { margin-bottom: 2.5rem; }
+  .career-heading .section-title { margin-bottom: 0; }
+
+  .career-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .career-card {
+    display: grid;
+    grid-template-columns: 132px minmax(0, 1fr);
+    gap: 1.35rem;
+    align-items: start;
+    padding: 1.35rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.018));
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+  }
+
+  .career-logo-wrap {
+    width: 132px;
+    height: 108px;
+    padding: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 11px;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+  }
+
+  .career-logo {
+    display: block;
+    width: 100%;
+    max-height: 66px;
+    object-fit: contain;
+  }
+
+  .career-company {
+    margin-bottom: 0.25rem;
+    font-size: 1.08rem;
+    font-weight: 800;
+    line-height: 1.35;
+  }
+
+  .career-period {
+    margin-bottom: 0.6rem;
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+
+  .career-team {
+    margin-bottom: 0.65rem;
+    color: var(--white);
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.55;
+  }
+
+  .career-task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .career-task-list li {
+    position: relative;
+    padding-left: 0.9rem;
+    color: var(--gray-lighter);
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .career-task-list li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+    font-weight: 800;
+  }
+
+  .career-pr {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: start;
+    margin-top: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+  }
+
+  .career-pr-mark {
+    color: var(--accent);
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .career-pr-text {
+    color: var(--gray-lighter);
+    font-size: 0.92rem;
+    font-weight: 300;
+    line-height: 1.85;
+  }
+
+  .career-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .career-meta-card {
+    padding: 1.35rem 1.5rem;
+    background: linear-gradient(180deg, rgba(245,200,66,0.045), rgba(255,255,255,0.018));
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+  }
+
+  .career-meta-label {
+    margin-bottom: 0.8rem;
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .license-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .license-list li {
+    color: var(--white);
+    font-size: 0.92rem;
+  }
+
+  .license-list li::before {
+    content: '✓';
+    margin-right: 0.65rem;
+    color: var(--accent);
+    font-weight: 800;
+  }
+
+  .career-email {
+    display: inline-block;
+    padding-bottom: 0.15rem;
+    color: var(--white);
+    font-size: 0.96rem;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(245,200,66,0.45);
+  }
+
+  .career-email:hover { color: var(--accent); }
+
+  @media (max-width: 900px) {
+    .career-card {
+      grid-template-columns: 112px minmax(0, 1fr);
+    }
+    .career-logo-wrap {
+      width: 112px;
+      height: 96px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .career-grid,
+    .career-meta {
+      grid-template-columns: 1fr;
+    }
+    .career-card {
+      grid-template-columns: 118px minmax(0, 1fr);
+    }
+    .career-logo-wrap {
+      width: 118px;
+      height: 98px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .career-card {
+      grid-template-columns: 1fr;
+    }
+    .career-logo-wrap {
+      width: 100%;
+      height: 92px;
+    }
+    .career-logo {
+      max-height: 54px;
+    }
+  }
 </style>
 </head>
 <body>
-
 <nav>
-  <a href="#" class="nav-logo">KKS <em>Portfolio</em></a>
-  <div class="nav-links">
-    <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">소개</button>
-    <button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">프로젝트</button>
-  </div>
+<a class="nav-logo" href="#">KKS <em>Portfolio</em></a>
+<div class="nav-links">
+<button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">소개</button>
+<button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">프로젝트</button>
+</div>
 </nav>
-
 <section class="hero" id="home">
-  <div class="hero-bg-lines"><span></span><span></span><span></span><span></span></div>
-  <div class="hero-glow"></div>
-  <div class="hero-eyebrow">Service Planner · AI Prototyper</div>
-  <h1 class="hero-name">Keon-seop<br><em>KIM</em></h1>
-  <p class="hero-sub">서비스기획 · 웹기획 · 앱기획<br>AI 기반 프로토타입 제작부터 신규 플랫폼 구축까지</p>
-  <div class="hero-tags">
-    <span class="hero-tag">AI Vibe Coding</span>
-    <span class="hero-tag">서비스 기획</span>
-    <span class="hero-tag">UX 설계</span>
-    <span class="hero-tag">프로토타입 제작</span>
-    <span class="hero-tag">PM</span>
-  </div>
-  <div class="hero-scroll"><span>Scroll</span><div class="hero-scroll-line"></div></div>
+<div class="hero-bg-lines"><span></span><span></span><span></span><span></span></div>
+<div class="hero-glow"></div>
+<div class="hero-eyebrow">Service Planner · AI Prototyper</div>
+<h1 class="hero-name">Keon-seop<br/><em>KIM</em></h1>
+<p class="hero-sub">서비스기획 · 웹기획 · 앱기획<br/>AI 기반 프로토타입 제작부터 신규 플랫폼 구축까지</p>
+<div class="hero-tags">
+<span class="hero-tag">AI Vibe Coding</span>
+<span class="hero-tag">서비스 기획</span>
+<span class="hero-tag">UX 설계</span>
+<span class="hero-tag">프로토타입 제작</span>
+<span class="hero-tag">PM</span>
+</div>
+<div class="hero-scroll"><span>Scroll</span><div class="hero-scroll-line"></div></div>
 </section>
-
-<section id="about">
-  <div class="section-label">About</div>
-  <div class="section-title">기획하고,<br>실제로 만듭니다.</div>
-  <div class="divider"></div>
-  <div class="about-grid">
-    <div class="about-text">
-      <p>아이디어에서 멈추지 않고, 실제로 동작하는 결과물을 만들어내는 기획자입니다. AI Vibe Coding을 통해 LLM 기반 프로토타입을 직접 구현하며, 기획 역량과 기술 친화적 실행력을 동시에 보여줍니다.</p>
-      <p>교육 테크 분야에서 서비스 기획, UX 설계, PM 역할을 두루 경험했으며, 사용자의 목소리를 직접 듣고 그에 맞는 전략을 수립하는 데 강점이 있습니다.</p>
-      <p>문제를 정의하고 끝내지 않습니다. 어떻게 구현하고, 실제로 작동하게 만들지까지 설계합니다. 그리고 그 과정을 통해 서비스의 결과를 바꿉니다.</p>
-      <button class="aboutme-btn" onclick="openAboutMe()">더 알아보기 · About Me &nbsp;→</button>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-item"><div class="skill-name-row"><span class="skill-name">서비스 기획</span><span class="skill-score">95</span></div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
-      <div class="skill-item"><div class="skill-name-row"><span class="skill-name">UX/UI 설계</span><span class="skill-score">93</span></div><div class="skill-bar"><div class="skill-fill" style="width:93%"></div></div></div>
-      <div class="skill-item"><div class="skill-name-row"><span class="skill-name">AI 프로토타이핑</span><span class="skill-score">90</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-      <div class="skill-item"><div class="skill-name-row"><span class="skill-name">PM / QA</span><span class="skill-score">90</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-      <div class="skill-item"><div class="skill-name-row"><span class="skill-name">요구사항 정의</span><span class="skill-score">93</span></div><div class="skill-bar"><div class="skill-fill" style="width:93%"></div></div></div>
-      <div class="skill-item"><div class="skill-name-row"><span class="skill-name">사업 전략</span><span class="skill-score">85</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-    </div>
-  </div>
+<section class="career-section" id="career"><div class="career-heading"><div class="section-label">Experience</div><div class="section-title">주요 경력</div></div><div class="divider"></div><div class="career-grid"><article class="career-card"><div class="career-logo-wrap"><img alt="(주)Poly Inspiration 로고" class="career-logo" src="data:image/png;base64,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"/></div><div><div class="career-company">(주)Poly Inspiration</div><div class="career-period">2023.12 ~ 재직 중</div><div class="career-team">IT사업본부 AI Product팀 과장</div><ul class="career-task-list"><li>AI 기반 신규 서비스 기획</li><li>AI 운영 플랫폼 구축</li><li>생성형 AI 활용 업무 프로세스 자동화(AX) 추진 등 담당</li></ul></div></article><article class="career-card"><div class="career-logo-wrap"><img alt="(주)천재교과서 로고" class="career-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAL4AAABDCAYAAAAieL9aAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAA7oSURBVHhe7Z15VBRHHsfHPzZ52Wx2367JxjVeQY3meDnMxsQcxmQ3dzxioiJeiSfGIx4xRqPGW1CjEnW4BDkExPsEL0TEAxAE5VAUL1AIKiDIPYPffb+aq7umR2bIYJid+rz3eyGT6urqqk93V1dVd1QQCJwQFf+DQOAMCPEFTokQX+CUCPEFTokQX+CUCPEFTokQX+CUCPEFTokQX+CUCPEFTokQX+CUCPEFTkmji38mpxDhhzIREZPFYsPBDMSkXEV1rZZPKhA8MBpd/IWhx/F471V4ss+vaPHFr/jbZyvQZ9ZWFJVW8kkFggdGo4u/PDIR7d280XGQL54Z7Is2/ddi0MJdKC6r4pMKBA+MP0z8EiG+4A/EbuLXautQrdGyvrshCM+IBLR38zGK33aAGm7zd+K34nJoaBtDeo0WNZo63Luny09bV4ca/e+GNLWaOvlOHwBUxhruuCwFpbWde6zurN2HLDT1PydRnVmbt9bK8kvbhPLWtZu+4Tjod1kZ9P/U1pmnr7t3T7GsjYHdxP9u9UG8PDIQb4wNNka3b0Pw4vAAJrwhOg72xXPD/NHV3ZSO4t9jgvDF7K04l1vE8tt2NBvvTQpD1zFBxjS0Df22PvqsYoVcvF6M/nN34LUxQWzfDYlXR6/H6OXRxjx/Xh+PLqPWy8pqKV5zD8aHUyOwNe68YsMqUVRahclrYvCKlfuQxuvuwXhzXChm+seh5K7yHdR9xT6r8n6dlT8In8/YjEMpV/lsUFBUjhl+R9BtXAjbr2G7V0cHYcDcHTh37Ta/CSPvVhmGe+41lqGrexDeGh+K4H3pfFKcyLiOLqPNy9pjUhi8d6awE8Ne2E38bzz2oFW/NegwyMcUkis9H7J0g3zQzlXNDjD9yi2WX/ihLLw4fB1cBnqbpaWuU1TCJb4IrPL/OzUCbfur2b4bEq37rUW/uduNeU5Vx7DuGV8GxWB5eOPZoX44lp4nK5slbt2pxIilUWht7T4UgupjTmC84hXbbcFO6/N20+VFJ3rWVZPIVTW17AJAdcNvQ3fwD7/fiPTLN2X7NXCtsBRfztlmLIOLmzc6D/WDz85UPimOpOWizQDzfdA2dAENUjhZGordxKezmgThBbc2SPD3J4cbxaehz5dHBLDGUEr7g/dhs64PiU+N8LSrt9k21gY15IB5O4x5fu99GO0GqM3S3S9IEK8tp6zq+pD4I5dFs/3y+VgbHQf54O0Joais0fDZs+cpW/OmdqQhaAOX8+/g8x83K9Yr/fbxtMj7iv/Vz9uNZSCR6Y7vu8tc/Li0XHYB5PfByjRAjVHLo/hNGoxDit9+oDfcf9ln1t1pKuJTPXiEn2TPKPVhF/EH++LlUYGoqK7ls2+Q+JR+XdQZY9eCupAfTN3I2ohP+8DE77+WOWYv7Cb+wPk78ffPV6Lll6tloXQg9LD71JdrZOme6O3F+plpl3QVGLI/g3UbaOz/aa7CSfyxK8zFz7xyi/UfH+/lxZVjDbuF8+WgRuPL+4+eq9Bz5mZjnrz4nfQn6VNfmcpPx8M3krXi3yypwKCFu9l++bJYCv4CQ+K/YkH8vrO31Zs33TGk+ZGkAVaIT+morrtP2IC0nEJ+1wxbxKeJzea9dGWltqG6ltZpkxQ/8nAWFoYcZw0uDTpoacVS5XWfuAFzg+Jl6RZvOAHvnafZQxSRerEQKyITsSj0BD77cZMsD0viF5ZUwG93KttGmve8oGPo8V2YrOFI1p4ztpiVlybcQg9kGPPkxac8/jslgvWp5wcfw7zgY3hzXIhMCFvEL6+qxabY82y/fFksxchlUbKT7X7ihx3KvG/eVO9dRgXKym+N+J2H+GHYkj2srv13p6Gg6C6/a4Yt4l+6UYJF+rL2nCHvWjVZ8S2xeluKfBy/31p8vWSP1aMexKyAOCa7oRIsiW8J2tVI/QOktHHnBx/nk5rBi9+q31pMWn1IloZGNaQnpi3iN4R9SZdk3Zf7iW8N1MWUDkLUJz6lJXm3xmXzWZlhi/hS6KJCd2ppnTqU+D8HH5cJRxJ9Mms7MgvK+KSK0APidN/Y3yX+lVvl6Dtvp0yWVv3VmOYfxyc1gxefHlwneB1ErWQMvR93V2ts8bfHZ9tNfBogoNG0hogfdtD0AGyJ3MIyVj+G8lI9WSM+XeyoOymtU4cSf5rPYdkBuLiq8fb0bYi/WsonVcQe4p/JLcZHM7bgacnzxlMDvOHu3XDxpVIL8S1zLLsQ70yJlHWT2rr5YnZYEp9UhkOLX1hcgcGL5KMKHV3V6DxlCyKyS/jkithD/MOp19iDs/QBt7WbLz5aGYecMvMhQCn2FJ9Wqrot2IXu34XhP1Mi0GNSOFuwR+PXBvbk3MHz67Pg4pcJF/9MuPhloOuG80gtrDCmsUV81z1X4OKTrsuLQn0Wc08UGP97Y4u/LzUPXcaGStrPBy0H+mJCcCKfVIZDix+dmMNmc/lRj0cm7oD74Rus710f9hB/aUSCrLvViSbMhgWg+fw4BGQU88ll2FP8xKx8dJ8YxspCx0D5dhkdiL0JOcY0EVnFeGhFKlSeKVAtTYHKIxnN15zByXzdQz9hi/hvR2RDtfiULi+KhUn49pBpcq2xxQ/en65fsqKrH6r7loP98bFPIm5UWm4/hxWfRlhGLYuWDb3RQbf/OgAPz4rB4+p0RF2uv7vze8Un2WhyR3qrpXK0HRUK1eIkvL/pIq6U1vCbGbGn+Enn8vHepHDj8CwJQcsEohJNs9AbzxXjz6vSoFp2Gqrlp5msT6rPIqGB4r+78QI7eVheFItPYXzMgxE/v+guhi7Zg7YD5A60GR6ExzwToT6jvMyBcEjxaa39gpATaOuqZo0iO+jRG9BsWTK7or0ach4JBaYGVeL3iE/T7rR2RyqJIZ6YshOqFWlQeaRg+L5ruH7XXBpCiN8w8csra+ERnsDqjneg5bjN7PieDcxCbK7yMKhDiU+zkIlZNzDOa7/ZAVN0GOKHv/50QCccNYJnCjqsy0Rgxm3klFSjWmve97FVfGrIvJtl2HX8Ij6dvsls1pUazeWb9Xho0UmofknVlcMjGZ9uzcHBq2XIL6+VdcGE+LaJf7eyhk0kzg44ytJL86XoMNQfj86J1dW9Rwo6B2YiPKsIuWXyencI8U9m3sCKTacwftUBvDQigC0Skx4sBc3gPjE2EqplKaZG0DcsVcBb4dmYGpuH4IwiFFWZhLFW/LtVtdh9IgeLw06yaXqa/OBnGilcBvrgkalRppPPEJ4peHhlGnptv4Q58fmIvqIbbhXiWyd+flE5myyb4X+ETRa27meS1lT33mgxfrNZvdM/P9ySgznHTPXuEOLTctXHPlnBCqe0tqZt/7Xo/dNWjN11wXigZkG/L0hiIw9pN00jGNaKf+1mKXrN3ILmvbxYw/FXGvp3Enia7xF0Czsvl8EQJBv9PjcRfXdcZvlOE+JbJT6ts+kycj1bYqJ0waEL31uTwqFacAKq5fo7LV/vC5PYhYdwCPFpSYB0lk0aVPg+M7ewobw7NXUYtT8XKs9kqJYqy/9S8Dmk3zK9j2ut+LTu23W+fJLKEHQytumvxg8+sSi5W420W5V4M4xGOxTkp1iSjMF7dWvShfjWiX88/TrembBBUXqarf9gagQOn7mOcTHXdRc5w/FJY2kKG34lHFZ8GjMnYUjQ85KXFEqqtZh/skDXuPxVtxHEp39//mt//BKZJHtZI6uoCq67r5iGDYX4sjqzh/hUJ62+WsMGGFKydXMHpTVazDmejz+xIVuu/R1VfDpQasx2rt54f1IEImPOoVjhzSB6iI3JLcNnW3OMwrOGtpP4VA5qACrL0MW7EX82D9UKa9XpWSIoowidArP0ZdCXQ4jfYPHp2crwggq9zfbr1mTW/5dSpalD9JVS9lxnnF+g43U88ePZAX/0QySTNDrxMorLKlFXzwxVWY0WJwvK8ePRG+gWno2/eKUpik9dFFrqQHIxqV3VZuvxdeLvwAvfrGOLojzDTiL5QgEbZbgf1LZFVRrsuFjChjWfC8xEs2WnMXivrgHohRda6tBpiC8LaoCJnPj9525nM5KGNDRubUl8WhBGbxRROhKk61hz8R9dlcbK0Gz5aTRbmoIWCuJTn9mwv2eG+LKJMCXxe2y8gGYeybq8KBafwgRO/PcmhzG5DPlR3rz49J4D3cXZ/gb7srsoL/67Ezfg9bFBbEFgyIEM1ib8y0JS6O5/4Gopvj2YhxeCsthdYKBe/NkBceyNPmmdjmhq4tPBkYT0ojC9JG4rWnrJWHsPVdo6VGnvQZoFiT8n8CheGh7AXomjoL8nrzkkE5+2oYVj9BuVp76TTglNnb4cmjrU6rcvq6hhw7S3SnVx804lSitqIM29pLza+N8NaSqqzCXUaLTssyrStEVllbLjoLthYYUGv0niZqXGWB6WpkYjKxPF7dJKWZkMFFdrUSDJi/6mC44sDVcmylv6NpdWew/FZfJjpKiS5EOrbelEp6A2058zVmFsf3opXX+cdMG6WWJe7/bCLuI3NiQxVSyJSUF/27KsWSDgafLi05WD1nSfvvAbUi/qgv6+nF9ivBULBLbS5MWn2yZ9uuSfvb3wr76rWdDf9DKL0sytQGANDiG+NaM6AoEtCPEFTkmTF58+kkRLIqQTIzT+PUbh8yICgbU0efFpRGdJ2AmZ+DT+TePKQnxBQ2ny4hObYs+ZfZ+HJjUOnzb/xqNAYA0OIX52XhGbnZSu76cZXJoFvZBXbPFLvQKBJRxCfJqxoyUK/AI06vK8MTaEfYiK3rair5LRDCYFzbgKBJZwCPGJI6nX2FeIXbj1/nQXoIddWitEa2oo2tl5XYfg/w+HEZ8WYHmGJxhXXUrl54O6QWMk37gXCHgcRnyCvtMz3YfG9OkKb/7CiRBfYC0OJT5x+04lVm5KYh+IovXadAJQX1+IL7AFhxOfoLH94+l57CvAvWZuxrPD/NCir+5/J0rxZB8vDFm4i99MIDDikOIboAksekkiIesGYlOvyeKs/jv7AoESDi2+QNBQhPgCp0SIL3BKhPgCp0SIL3BKhPgCp0SIL3BKhPgCp0SIL3BKhPgCp0SIL3BKhPgCp+R//oJkwLVmMUMAAAAASUVORK5CYII="/></div><div><div class="career-company">(주)천재교과서</div><div class="career-period">2021.12 ~ 2023.12</div><div class="career-team">IT기획부 서비스기획팀</div><ul class="career-task-list"><li>화상 커뮤니케이션 솔루션 기획·운영</li><li>신규 화상 서비스 구축 등 담당</li></ul></div></article><article class="career-card"><div class="career-logo-wrap"><img alt="(주)ST Unitas 로고" class="career-logo" src="data:image/png;base64,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"/></div><div><div class="career-company">(주)ST Unitas</div><div class="career-period">2019.02 ~ 2021.12</div><div class="career-team">온라인 기획 BU 경단기/법검단기팀</div><ul class="career-task-list"><li>콘텐츠 상품 기획</li><li>매출 분석</li><li>프로모션 전략 수립 등 서비스 전반의 운영 및 기획 업무 담당</li></ul></div></article><article class="career-card"><div class="career-logo-wrap"><img alt="(주)이투스교육 로고" class="career-logo" src="data:image/png;base64,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"/></div><div><div class="career-company">(주)이투스교육</div><div class="career-period">2016. 03 ~ 2018.01</div><div class="career-team">온라인사업본부 강사관리팀</div><ul class="career-task-list"><li>콘텐츠 파트너 채용 및 운영 관리</li><li>웹서비스 개선 기획 등 담당</li></ul></div></article></div><div class="career-pr"><div class="career-pr-mark">“</div><div class="career-pr-text">성실함과 꾸준함을 바탕으로 작은 데이터나 요구사항도 놓치지 않고 끝까지 책임 있게 완수합니다.<br/>기획자로서 복잡한 요구를 구조화하고 체계적인 시스템으로 설계하여 실행 가능한 결과물로 이끌어냅니다.</div></div><div class="career-meta"><div class="career-meta-card"><div class="career-meta-label">License</div><ul class="license-list"><li>SQL 개발자 (SQLD)</li><li>데이터분석 준전문가 (ADsP)</li></ul></div><div class="career-meta-card"><div class="career-meta-label">E-mail</div><a class="career-email" href="mailto:kyzersolger@naver.com">kyzersolger@naver.com</a></div></div></section><section id="about">
+<div class="section-label">About</div>
+<div class="section-title">기획하고,<br/>실제로 만듭니다.</div>
+<div class="divider"></div>
+<div class="about-grid">
+<div class="about-text">
+<p>아이디어에서 멈추지 않고, 실제로 동작하는 결과물을 만들어내는 기획자입니다. AI Vibe Coding을 통해 LLM 기반 프로토타입을 직접 구현하며, 기획 역량과 기술 친화적 실행력을 동시에 보여줍니다.</p>
+<p>교육 테크 분야에서 서비스 기획, UX 설계, PM 역할을 두루 경험했으며, 사용자의 목소리를 직접 듣고 그에 맞는 전략을 수립하는 데 강점이 있습니다.</p>
+<p>문제를 정의하고 끝내지 않습니다. 어떻게 구현하고, 실제로 작동하게 만들지까지 설계합니다. 그리고 그 과정을 통해 서비스의 결과를 바꿉니다.</p>
+<button class="aboutme-btn" onclick="openAboutMe()">더 알아보기 · About Me  →</button>
+</div>
+<div class="skills-grid">
+<div class="skill-item"><div class="skill-name-row"><span class="skill-name">서비스 기획</span><span class="skill-score">95</span></div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+<div class="skill-item"><div class="skill-name-row"><span class="skill-name">UX/UI 설계</span><span class="skill-score">93</span></div><div class="skill-bar"><div class="skill-fill" style="width:93%"></div></div></div>
+<div class="skill-item"><div class="skill-name-row"><span class="skill-name">AI 프로토타이핑</span><span class="skill-score">90</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+<div class="skill-item"><div class="skill-name-row"><span class="skill-name">PM / QA</span><span class="skill-score">90</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+<div class="skill-item"><div class="skill-name-row"><span class="skill-name">요구사항 정의</span><span class="skill-score">93</span></div><div class="skill-bar"><div class="skill-fill" style="width:93%"></div></div></div>
+<div class="skill-item"><div class="skill-name-row"><span class="skill-name">사업 전략</span><span class="skill-score">85</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+</div>
+</div>
 </section>
-
 <section id="projects">
-  <div class="section-label">Projects</div>
-  <div class="section-title">모든 기획의 기록</div>
-  <p class="section-desc">AI 프로토타입 제작부터 신규 플랫폼 구축, 운영 개선, 매출 전략까지<br>— 실제 결과를 만들어낸 프로젝트들입니다.</p>
-  <div class="tabs">
-    <button class="tab-btn active" onclick="filterCards('all', this)">전체</button>
-    <button class="tab-btn" onclick="filterCards('ai', this)">AI 프로토타입</button>
-    <button class="tab-btn" onclick="filterCards('tool', this)">자동화도구 제작</button>
-    <button class="tab-btn" onclick="filterCards('new', this)">신규 구축</button>
-    <button class="tab-btn" onclick="filterCards('ops', this)">운영 개선</button>
-    <button class="tab-btn" onclick="filterCards('sales', this)">매출 전략</button>
-  </div>
-  <div class="projects-grid" id="projectsGrid"></div>
+<div class="section-label">Projects</div>
+<div class="section-title">모든 기획의 기록</div>
+<p class="section-desc">AI 프로토타입 제작부터 신규 플랫폼 구축, 운영 개선, 매출 전략까지<br/>— 실제 결과를 만들어낸 프로젝트들입니다.</p>
+<div class="tabs">
+<button class="tab-btn active" onclick="filterCards('all', this)">전체</button>
+<button class="tab-btn" onclick="filterCards('ai', this)">AI 프로토타입</button>
+<button class="tab-btn" onclick="filterCards('tool', this)">자동화도구 제작</button>
+<button class="tab-btn" onclick="filterCards('new', this)">신규 구축</button>
+<button class="tab-btn" onclick="filterCards('ops', this)">운영 개선</button>
+<button class="tab-btn" onclick="filterCards('sales', this)">매출 전략</button>
+</div>
+<div class="projects-grid" id="projectsGrid"></div>
 </section>
-
 <footer>
-  <p>© 2025 <strong>Keon-seop KIM</strong> — Service Planner Portfolio</p>
-  <p>기획 · 설계 · 실행</p>
+<p>© 2025 <strong>Keon-seop KIM</strong> — Service Planner Portfolio</p>
+<p>기획 · 설계 · 실행</p>
 </footer>
-
 <!-- ABOUT ME MODAL -->
 <div class="aboutme-overlay" id="aboutMeModal" onclick="closeAboutMe(event)">
-  <div class="aboutme-modal">
-    <div class="aboutme-header">
-      <div class="aboutme-header-left">
-        <span class="aboutme-eyebrow">About Me</span>
-        <div class="aboutme-header-title">Keon-seop <em>KIM</em></div>
-      </div>
-      <button class="modal-close" onclick="closeAboutMeBtn()">✕</button>
-    </div>
-    <div class="aboutme-body">
-      <div class="aboutme-questions" id="aboutmeQuestions"></div>
-      <div class="aboutme-answer" id="aboutmeAnswer"></div>
-    </div>
-  </div>
+<div class="aboutme-modal">
+<div class="aboutme-header">
+<div class="aboutme-header-left">
+<span class="aboutme-eyebrow">About Me</span>
+<div class="aboutme-header-title">Keon-seop <em>KIM</em></div>
 </div>
-
+<button class="modal-close" onclick="closeAboutMeBtn()">✕</button>
+</div>
+<div class="aboutme-body">
+<div class="aboutme-questions" id="aboutmeQuestions"></div>
+<div class="aboutme-answer" id="aboutmeAnswer"></div>
+</div>
+</div>
+</div>
 <div class="modal-overlay" id="mainModal" onclick="closeModal(event)">
-  <div class="modal" id="modalContent">
-    <div class="modal-header">
-      <div class="modal-header-left">
-        <div class="modal-category-badge" id="modalBadge"></div>
-        <div class="modal-title" id="modalTitle"></div>
-      </div>
-      <div class="modal-header-right">
-        <button class="modal-close" onclick="closeMainModal()">✕</button>
-      </div>
-    </div>
-    <div class="modal-body" id="modalBody"></div>
-  </div>
+<div class="modal" id="modalContent">
+<div class="modal-header">
+<div class="modal-header-left">
+<div class="modal-category-badge" id="modalBadge"></div>
+<div class="modal-title" id="modalTitle"></div>
 </div>
-
+<div class="modal-header-right">
+<button class="modal-close" onclick="closeMainModal()">✕</button>
+</div>
+</div>
+<div class="modal-body" id="modalBody"></div>
+</div>
+</div>
 <div class="sub-modal-overlay" id="subModal" onclick="closeSubModal(event)">
-  <div class="sub-modal" id="subModalContent">
-    <div class="sub-modal-header">
-      <div class="sub-modal-title" id="subModalTitle">기획서 상세</div>
-      <button class="modal-close" onclick="closeSubModal()">✕</button>
-    </div>
-    <div class="sub-modal-body" id="subModalBody"></div>
-  </div>
+<div class="sub-modal" id="subModalContent">
+<div class="sub-modal-header">
+<div class="sub-modal-title" id="subModalTitle">기획서 상세</div>
+<button class="modal-close" onclick="closeSubModal()">✕</button>
 </div>
-
+<div class="sub-modal-body" id="subModalBody"></div>
+</div>
+</div>
 <div class="viewer-overlay" id="imgViewer" onclick="onViewerOverlayClick(event)">
-  <div class="viewer-box">
-    <div class="viewer-topbar">
-      <span class="viewer-counter" id="viewerCounter"></span>
-      <span class="viewer-caption-top" id="viewerCaption"></span>
-      <button class="viewer-close" onclick="closeViewer()">✕</button>
-    </div>
-    <div class="viewer-img-wrap">
-      <img class="viewer-img" id="viewerImg" src="" alt="">
-    </div>
-    <button class="viewer-nav viewer-nav-prev" id="viewerPrev" onclick="viewerNav(-1)">&#8249;</button>
-    <button class="viewer-nav viewer-nav-next" id="viewerNext" onclick="viewerNav(1)">&#8250;</button>
-    <div class="viewer-strip-wrap">
-      <div class="viewer-strip" id="viewerStrip"></div>
-    </div>
-  </div>
+<div class="viewer-box">
+<div class="viewer-topbar">
+<span class="viewer-counter" id="viewerCounter"></span>
+<span class="viewer-caption-top" id="viewerCaption"></span>
+<button class="viewer-close" onclick="closeViewer()">✕</button>
 </div>
-
+<div class="viewer-img-wrap">
+<img alt="" class="viewer-img" id="viewerImg" src=""/>
+</div>
+<button class="viewer-nav viewer-nav-prev" id="viewerPrev" onclick="viewerNav(-1)">‹</button>
+<button class="viewer-nav viewer-nav-next" id="viewerNext" onclick="viewerNav(1)">›</button>
+<div class="viewer-strip-wrap">
+<div class="viewer-strip" id="viewerStrip"></div>
+</div>
+</div>
+</div>
 <script>
 // ================================================================
 // 이미지 경로 설정
