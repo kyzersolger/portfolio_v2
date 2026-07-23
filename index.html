@@ -594,7 +594,7 @@
 <div class="about-grid">
 <div class="about-text">
 <p>아이디어에서 멈추지 않고, 실제로 동작하는 결과물을 만들어내는 기획자입니다. AI Vibe Coding을 통해 LLM 기반 프로토타입을 직접 구현하며, 기획 역량과 기술 친화적 실행력을 동시에 보여줍니다.</p>
-<p>교육 테크 분야에서 서비스 기획, UX 설계, PM 역할을 두루 경험했으며, 사용자의 목소리를 직접 듣고 그에 맞는 전략을 수립하는 데 강점이 있습니다.</p>
+<p>에듀테크 분야에서 서비스 기획, UX 설계, PM 역할을 두루 경험했으며, 사용자의 목소리를 직접 듣고 그에 맞는 전략을 수립하는 데 강점이 있습니다.</p>
 <p>문제를 정의하고 끝내지 않습니다. 어떻게 구현하고, 실제로 작동하게 만들지까지 설계합니다. 그리고 그 과정을 통해 서비스의 결과를 바꿉니다.</p>
 <button class="aboutme-btn" onclick="openAboutMe()">더 알아보기 · About Me  →</button>
 </div>
@@ -610,13 +610,13 @@
 </section>
 <section id="projects">
 <div class="section-label">Projects</div>
-<div class="section-title">모든 기획의 기록</div>
-<p class="section-desc">AI 프로토타입 제작부터 신규 플랫폼 구축, 운영 개선, 매출 전략까지<br/>— 실제 결과를 만들어낸 프로젝트들입니다.</p>
+<div class="section-title">주요 프로젝트 기록</div>
+<p class="section-desc">AI 기반 시스템 설계/제작부터 신규 플랫폼 구축, 운영 개선, 매출 전략까지<br/>— 실제 결과를 만들어낸 프로젝트들입니다.</p>
 <div class="tabs">
 <button class="tab-btn active" onclick="filterCards('all', this)">전체</button>
-<button class="tab-btn" onclick="filterCards('ai', this)">AI 프로토타입</button>
+<button class="tab-btn" onclick="filterCards('ai', this)">AI 기반 시스템 설계</button>
 <button class="tab-btn" onclick="filterCards('tool', this)">자동화도구 제작</button>
-<button class="tab-btn" onclick="filterCards('new', this)">신규 구축</button>
+<button class="tab-btn" onclick="filterCards('new', this)">신규 시스템/서비스 개발</button>
 <button class="tab-btn" onclick="filterCards('ops', this)">운영 개선</button>
 <button class="tab-btn" onclick="filterCards('sales', this)">매출 전략</button>
 </div>
@@ -739,7 +739,7 @@ const projects = [
   },
   {
     id: 'canb-ai-care', category: 'ai', org: 'Poly',
-    title: 'CANB AI CARE — AI 상담 솔루션 프로토타입',
+    title: 'CANB AI CARE — AI 상담 솔루션',
     short: '분산된 학습·평가 데이터를 LLM 기반으로 통합 분석, 데이터 기반 상담 환경을 구축하는 AI 상담 솔루션.',
     period: '2025.10 ~ 2025.12 (3개월)', role: '기획, 요구사항 정의, UX 설계, 프로토타입 제작', type: '인하우스',
     bg: '여러 시스템에 흩어져 있던 고객 이력·성과 데이터를 상담 현장에서 즉시 활용하기 어려운 구조, 상담은 담당자 개인의 경험에 의존. 데이터를 실제 의사결정에 연결할 수 있는 페이지 필요.',
@@ -760,7 +760,7 @@ const projects = [
   },
   {
     id: 'call-analysis', category: 'ai', org: 'Poly',
-    title: '상담 녹음 분석 시스템 프로토타입',
+    title: '상담 녹음 분석 시스템',
     short: 'STT 기반 자동 요약·정리로 상담 교사의 기록 업무 부담을 제거하고 학생 관리 효율성을 높이는 시스템.',
     period: '2025.11 ~ 2025.12 (2개월)', role: '기획, 요구사항 정의, UX 설계, 프로토타입 제작', type: '인하우스',
     bg: '담당자가 다수의 고객을 응대하며 상담 내용을 수기로 기록하느라 많은 시간 소요, 축적된 녹음 데이터는 활용되지 못한 채 방치. 또한 본사 입장에서 현장의 상담 현황 모니터링 요소 확보 필요.',
@@ -782,7 +782,7 @@ const projects = [
   },
   {
     id: 'writing-tutor', category: 'ai', org: 'Poly',
-    title: 'AI Writing Tutor 시스템 프로토타입',
+    title: 'AI Writing Tutor 시스템',
     short: '실제 LLM API를 적용하여 학생의 Writing 실력을 AI가 평가하고, 성장 포트폴리오로 시각화하는 학습 시스템.',
     period: '2025.08 ~ 2025.09 (2개월)', role: '기획, 요구사항 정의, UX 설계, 프로토타입 제작', type: '인하우스',
     bg: '프로그램 운영 효과를 정량적으로 확인하기 어려운 상황, 이용자가 자신의 성장 과정을 체감할 수 있는 장치 부족이라는 문제의식에서 출발.',
@@ -1011,8 +1011,8 @@ const projects = [
 ];
 
 const catLabels = {
-  ai: { label: 'AI 프로토타입', cls: 'cat-ai' },
-  new: { label: '신규 구축', cls: 'cat-new' },
+  ai: { label: 'AI 기반 시스템 설계', cls: 'cat-ai' },
+  new: { label: '신규 시스템/서비스 개발', cls: 'cat-new' },
   ops: { label: '운영 개선', cls: 'cat-ops' },
   sales: { label: '매출 전략', cls: 'cat-sales' },
   tool: { label: '자동화도구 제작', cls: 'cat-tool' }
